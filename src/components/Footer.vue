@@ -2,7 +2,7 @@
 import { ChevronsDown } from "lucide-vue-next";
 import Separator from "./ui/separator/Separator.vue";
 
-import FLECTRA_TRANSPARENT from "@/assets/FLECTRA_TRANSPARENT.png";
+import FLECTRA_TRANSPARENT from "@/assets/logo.png";
 </script>
 
 <template>
@@ -25,7 +25,7 @@ import FLECTRA_TRANSPARENT from "@/assets/FLECTRA_TRANSPARENT.png";
 
             <img :src="FLECTRA_TRANSPARENT" alt="Flectra Logo" height="36px" width="36px" />
 
-            <h3 class="text-2xl">Fletra.ai</h3>
+            <h3 class="text-2xl">PYQS.com</h3>
           </a>
         </div>
 
@@ -159,7 +159,7 @@ import FLECTRA_TRANSPARENT from "@/assets/FLECTRA_TRANSPARENT.png";
             href=""
             className="text-primary transition-all border-primary hover:border-b-2"
           >
-            Flectra.ai
+            PYQS.com
           </a>
         </h3>
       </section>

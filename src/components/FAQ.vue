@@ -14,36 +14,35 @@ interface FAQProps {
 
 const FAQList: FAQProps[] = [
   {
-    question: "How fast can I deploy an AI agent?",
-    answer: "With our platform, you can deploy an AI agent in just a few minutes, thanks to our streamlined, no-code process.",
+    question: "How can I access MBBS notes?",
+    answer: "Simply log in to the platform and browse through the organized categories to find the notes you need.",
     value: "item-1",
   },
   {
-    question: "Do I need any technical skills to use the platform?",
+    question: "Is the platform free to use?",
     answer:
-      "No. Our platform is designed for ease of use, requiring no coding or technical knowledge. Everything is intuitive, with templates and customization options to guide you.",
+      "Yes, pyqs offers both freemium and premium plans, with the basic features available for free to all users.",
     value: "item-2",
   },
   {
-    question: "Can I scale my AI agents as my business grows?",
+    question: "Can I contribute my own notes?",
     answer:
-      "Yes! Our platform allows you to scale effortlessly by adding more AI agents as your business needs grow, without additional infrastructure or complexity.",
+      "Absolutely! The platform encourages students to upload and share their notes to help others in the community.",
     value: "item-3",
   },
   {
-    question: "What kind of tasks can AI agents automate?",
+    question: "Are the notes verified for accuracy?",
     answer:
-      "AI agents can automate a wide range of tasks, from customer support and data processing to marketing automation and operational workflows.",
+      "Yes, all notes undergo a verification process to ensure their accuracy and relevance to the MBBS syllabus.",
     value: "item-4",
   },
   {
-    question: "Is the platform secure for handling sensitive data?",
+    question: "How often are new notes added?",
     answer:
-      "Absolutely. We prioritize security with robust protocols to ensure data protection and compliance with industry standards.",
+      "New notes and resources are added regularly to ensure the platform stays up-to-date with the latest syllabus and study materials.",
     value: "item-5",
   },
 ];
-
 </script>
 
 <template>

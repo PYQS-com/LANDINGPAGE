@@ -39,7 +39,7 @@ const handleSubmit = () => {
   const { firstName, lastName, email, subject, message } = contactForm;
   console.log(contactForm);
 
-  const mailToLink = `mailto:leomirandadev@gmail.com?subject=${subject}&body=Hello I am ${firstName} ${lastName}, my Email is ${email}. %0D%0A${message}`;
+  const mailToLink = `mailto:mail@gmail.com?subject=${subject}&body=Hello I am ${firstName} ${lastName}, my Email is ${email}. %0D%0A${message}`;
 
   window.location.href = mailToLink;
 };
@@ -77,7 +77,7 @@ const handleSubmit = () => {
               <div class="font-bold">Call us</div>
             </div>
 
-            <div>+91 7736903778</div>
+            <div>+91 9999999999</div>
           </div>
 
           <div>
@@ -86,7 +86,7 @@ const handleSubmit = () => {
               <div class="font-bold">Mail US</div>
             </div>
 
-            <div>flectra.ai@gmail.com</div>
+            <div>pyqs.info@gmail.com</div>
           </div>
 
           <div>

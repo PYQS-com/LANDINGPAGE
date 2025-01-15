@@ -21,39 +21,39 @@ interface FeaturesProps {
 const featureList: FeaturesProps[] = [
   {
     icon: "tabletSmartphone",
-    title: "Instant AI Deployment",
+    title: "Quick Access to Notes",
     description:
-      "Deploy fully functional AI agents within seconds, providing immediate automation solutions that reduce human dependency and errors.",
+      "Get instant access to MBBS class notes and study materials, organized for your convenience.",
   },
   {
     icon: "badgeCheck",
-    title: "Autonomous Workforce",
+    title: "Verified Content",
     description:
-      "Empower your operations with AI agents that work independently, handling complex tasks without requiring constant supervision or intervention.",
+      "All materials are curated and verified to ensure accuracy and reliability for students.",
   },
   {
     icon: "goal",
-    title: "Agents Marketplace",
+    title: "Diverse Subjects",
     description:
-      "Easily scale your business by deploying additional AI agents as your operations grow, without the need for hiring or training new employees.",
+      "Access notes and resources across various MBBS subjects, tailored for comprehensive learning.",
   },
   {
     icon: "pictureInPicture",
-    title: "Customizable Templates",
+    title: "User-Friendly Interface",
     description:
-      "Leverage a wide range of AI templates that are fully customizable, allowing you to tailor AI solutions to your specific business needs.",
+      "Navigate through the platform effortlessly with an intuitive and simple design.",
   },
   {
     icon: "mousePointerClick",
-    title: "Seamless Workflow Integration",
+    title: "Interactive Features",
     description:
-      "Integrate AI agents seamlessly into your existing workflows, ensuring minimal disruption while maximizing productivity and efficiency.",
+      "Engage with interactive tools that enhance understanding and retention of complex topics.",
   },
   {
     icon: "newspaper",
-    title: "Real-Time Adaptation",
+    title: "Regular Updates",
     description:
-      "AI agents continuously learn and adapt to evolving environments, ensuring that your business stays ahead of market changes and operational demands.",
+      "Stay updated with the latest additions and improvements to the resources available on the platform.",
   },
 ];
 
@@ -93,7 +93,7 @@ const iconMap: Record<
     </h2>
 
     <h3 class="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-      Unlock the potential of AI-driven automation with cutting-edge tools that set us apart from traditional competitors. Our platform delivers unmatched scalability, integration, and efficiency to revolutionize your business.
+      Experience a seamless and enriching study platform designed specifically for MBBS students, offering verified, diverse, and interactive resources.
     </h3>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">

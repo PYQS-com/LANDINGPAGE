@@ -18,31 +18,31 @@ import { ArrowRight } from "lucide-vue-next";
           class="text-sm py-2"
         >
           <span class="mr-2 text-primary">
-            <Badge>New</Badge>
+            <Badge>Update</Badge>
           </span>
-          <span> Features shipped ✨ </span>
+          <span> Explore New Features 🚀 </span>
         </Badge>
 
         <div
           class="max-w-screen-md mx-auto text-center text-5xl md:text-6xl font-bold"
         >
           <h1>
-            Build and deploy
+            Access HQ
             <span
-              class="text-transparent bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text"
-              >AI Agents
+              class="text-transparent bg-gradient-to-r from-[#42a5f5] to-primary bg-clip-text"
+              >MBBS Notes
             </span>
-            within seconds
+            in Minutes
           </h1>
         </div>
 
         <p class="max-w-screen-sm mx-auto text-xl text-muted-foreground">
-          Automate repeated tasks, Focus on what matters
+          Simplify your learning journey, focus on what matters most.
         </p>
 
         <div class="space-y-4 md:space-y-0 md:space-x-4">
           <Button class="w-5/6 md:w-1/4 font-bold group/arrow">
-            Get Started
+            Start Learning
             <ArrowRight
               class="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform"
             />
@@ -55,7 +55,7 @@ import { ArrowRight } from "lucide-vue-next";
           >
             <a
               href="#contact"
-              >Contact Us</a
+              >Get in Touch</a
             >
           </Button>
         </div>
@@ -67,20 +67,11 @@ import { ArrowRight } from "lucide-vue-next";
           class="absolute -top-6 right-12 w-[90%] h-12 lg:h-[80%] bg-primary/50 blur-3xl rounded-full img-shadow-animation"
         ></div>
 
-        <!-- <img
-          class="w-full md:w-[1200px] mx-auto rounded-lg relative rouded-lg leading-none flex items-center border border-t-2 border-t-primary/30 img-border-animation"
-          :src="
-            mode == 'light' ? 'hero-image-light.jpg' : 'hero-image-dark.jpg'
-          "
-          alt="dashboard using shadcn-vue"
-        /> -->
-
         <img
   class="w-full md:w-[1200px] mx-auto rounded-lg relative leading-none flex items-center border border-t-2 border-t-primary/30 img-border-animation"
   :src="mode == 'light' ? 'https://res.cloudinary.com/tesalab/image/upload/v1728665178/22_qwxx37.png' : 'https://res.cloudinary.com/tesalab/image/upload/v1728665177/11_clzacu.png'"
   alt="dashboard using shadcn-vue"
 />
-
 
         <!-- gradient effect img -->
         <div

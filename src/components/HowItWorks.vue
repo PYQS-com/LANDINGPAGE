@@ -11,32 +11,32 @@ interface HowItWorksProps {
 
 const HowItWorksList: HowItWorksProps[] = [
   {
-    badgeTitle: "Kickstart Your Journey",
-    title: "Create New AI Agent",
+    badgeTitle: "Start Your Learning",
+    title: "Access MBBS Notes",
     description:
-      "Begin by defining your project’s objectives and requirements. Our intuitive interface guides you through creating a tailored project that aligns with your business goals.",
-    image: "https://res.cloudinary.com/tesalab/image/upload/v1728667300/1_wwcwkh.png",
+      "Begin your journey by exploring a vast collection of MBBS notes tailored to your syllabus. Our intuitive platform makes it easy to find the resources you need.",
+    image: "https://res.cloudinary.com/tesalab/image/upload/v1735316949/14_pklxoy.png",
   },
   {
-    badgeTitle: "Personalization",
-    title: "Customize Your AI Agent",
+    badgeTitle: "Gamification",
+    title: "Personalised experience",
     description:
-      "Utilize our extensive library of templates and tools to customize your AI agent. Tailor its functionalities to address your specific operational needs and enhance performance.",
-    image: "https://res.cloudinary.com/tesalab/image/upload/v1728669795/222_zkfqjl.png",
+      "Experience the incredible benefits of gamification, making learning fun and engaging. Earn rewards and track your progress as you learn.",
+    image: "https://res.cloudinary.com/tesalab/image/upload/v1735316950/16_wi9uhm.png",
   },
   {
-    badgeTitle: "Refine your agent",
-    title: "Test and Optimize",
+    badgeTitle: "Enhance Your Learning",
+    title: "Interactive Tools",
     description:
-      "Run simulations and tests to ensure your AI agent operates seamlessly. Make adjustments as needed to optimize its performance before deployment.",
-    image: "https://res.cloudinary.com/tesalab/image/upload/v1728670155/333_o1bvby.png",
+      "Utilize interactive features to test your knowledge and refine your understanding of complex topics, ensuring better retention.",
+    image: "https://res.cloudinary.com/tesalab/image/upload/v1735316949/17_pbztvs.png",
   },
   {
-    badgeTitle: "Deploy with Confidence",
-    title: "Launch Your AI Agent",
+    badgeTitle: "Achieve Your Goals",
+    title: "Stay Updated",
     description:
-      "Deploy your AI agent with a single click. Monitor its performance in real-time and make data-driven adjustments to maximize efficiency and impact.",
-    image: "https://res.cloudinary.com/tesalab/image/upload/v1728670422/444_uvzh8x.gif",
+      "Stay ahead with regular updates to our content library. Access the latest notes and resources to ensure you are always prepared.",
+    image: "https://res.cloudinary.com/tesalab/image/upload/v1735316950/15_dthjvc.png",
   },
 ];
 

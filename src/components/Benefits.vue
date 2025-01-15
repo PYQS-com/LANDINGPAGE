@@ -22,39 +22,39 @@ interface BenefitsProps {
 const benefitList: BenefitsProps[] = [
   {
     icon: "blocks",
-    title: "Faster Project Completion",
+    title: "Comprehensive Study Resources",
     description:
-      "Reduce project timelines by automating routine tasks with AI agents, allowing your teams to focus on strategic, high-impact activities.",
+      "Access a vast collection of MBBS notes and study materials, meticulously organized for easy navigation.",
   },
   {
     icon: "lineChart",
-    title: "Scalable Automation",
+    title: "Efficient Learning Tools",
     description:
-      "Effortlessly scale your operations with AI agents that grow with your business, minimizing the need for additional human resources as demand increases.",
+      "Streamline your study process with tools designed to help you learn faster and retain more information.",
   },
   {
     icon: "wallet",
-    title: "Cost Reduction",
+    title: "Affordable Education",
     description:
-      "Significantly lower operational expenses by automating repetitive tasks, reducing errors, and cutting down on the need for additional hires.",
+      "Enjoy high-quality resources at no additional cost, making education accessible for every student.",
   },
   {
     icon: "sparkle",
-    title: "Improved Efficiency",
+    title: "Enhanced Study Experience",
     description:
-      "Streamline workflows with AI agents that handle tasks 24/7, ensuring consistent performance, reducing bottlenecks, and increasing overall efficiency.",
+      "Utilize interactive notes and materials that simplify complex topics, making your learning journey enjoyable.",
   },
   {
     icon: "shieldCheck",
-    title: "Enhanced Security",
+    title: "Secure Access",
     description:
-      "Protect sensitive company data with AI agents that ensure compliance with security protocols, safeguarding against data breaches and cyber threats.",
+      "Your data and resources are safeguarded with top-notch security measures, ensuring a worry-free experience.",
   },
   {
     icon: "workflow",
-    title: "Boosted Productivity",
+    title: "Collaborative Environment",
     description:
-      "Allow your human employees to focus on high-value tasks while AI agents manage routine operations, resulting in a marked increase in team productivity.",
+      "Engage with a community of learners by sharing notes and insights, fostering a collaborative learning space.",
   },
 ];
 
@@ -71,7 +71,7 @@ const iconMap: Record<
   | typeof ShieldCheck
 > = {
   sparkle: Sparkle,
-  workflow:Workflow,
+  workflow: Workflow,
   shieldCheck: ShieldCheck,
   tag: Tag,
   paintbrush: Paintbrush,
@@ -91,10 +91,10 @@ const iconMap: Record<
   <h2 class="text-lg text-primary mb-2 tracking-wider">Why Choose Us</h2>
 
   <h2 class="text-3xl md:text-4xl font-bold mb-4">
-    Empower Your Business with AI
+    Simplify Your MBBS Journey
   </h2>
   <p class="text-xl text-muted-foreground mb-8">
-    Transform your operations with cutting-edge autonomous AI agents designed to streamline processes, boost efficiency, and scale effortlessly. Our platform is your gateway to a smarter, faster, and more cost-effective future.
+    Discover a platform tailored to meet the needs of MBBS students, offering structured resources, efficient tools, and a collaborative community to enhance your medical education experience.
   </p>
 </div>
 

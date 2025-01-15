@@ -29,7 +29,7 @@ import { ChevronsDown, Menu } from "lucide-vue-next";
 import GithubIcon from "@/icons/GithubIcon.vue";
 import ToggleTheme from "./ToggleTheme.vue";
 
-import FLECTRA_TRANSPARENT from "@/assets/FLECTRA_TRANSPARENT.png";
+import FLECTRA_TRANSPARENT from "@/assets/logo.png";
 import NAV_IMG from "@/assets/NAV_IMG.gif";
 
 interface RouteProps {
@@ -43,10 +43,6 @@ interface FeatureProps {
 }
 
 const routeList: RouteProps[] = [
-  // {
-  //   href: "#testimonials",
-  //   label: "Testimonials",
-  // },
   {
     href: "#features",
     label: "Features",
@@ -67,31 +63,26 @@ const routeList: RouteProps[] = [
 
 const featureList: FeatureProps[] = [
   {
-    title: "AI Agents",
-    // description: "Deploy intelligent agents instantly to handle repetitive tasks, improve operational efficiency, and reduce human error.",
+    title: "PDF Notes Sharing",
+    description: "Access shared MBBS class notes and PDF materials to enhance your study experience effortlessly.",
   },
   {
-    title: "Agentic Workforce",
-    // description:
-    //   "Create a fully autonomous workforce capable of making decisions, performing tasks, and adapting to workflows without human intervention.",
+    title: "Organized Content",
+    description: "Find materials sorted by subjects and topics for quick and easy access to what you need.",
   },
   {
-    title: "AI Tools",
-    // description:
-    //   "Access an array of pre-built AI tools that can be customized and deployed in minutes to automate various business processes.",
+    title: "User-Friendly Interface",
+    description: "Navigate seamlessly through the platform designed specifically for student convenience.",
   },
   {
-    title: "Templates & Marketplace",
-    // description:
-    //   "Choose from a variety of pre-built templates and AI models available in the marketplace to accelerate your AI development process.",
+    title: "Collaborative Learning",
+    description: "Share your own notes and help create a thriving community of learners.",
   },
   {
-    title: "AI Dashboard",
-    // description:
-    //   "Moniter every aspect of your AI agents, workforce, and tools from a centralized dashboard that provides real-time insights and analytics.",
+    title: "24/7 Availability",
+    description: "Access your study materials anytime, anywhere, ensuring uninterrupted learning.",
   },
 ];
-
 
 const isOpen = ref<boolean>(false);
 </script>
@@ -103,11 +94,8 @@ const isOpen = ref<boolean>(false);
     'w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border z-40 rounded-[60px] flex justify-between items-center p-2 bg-card shadow-md': true,
   }">
     <a href="/" class="font-bold text-lg flex items-center">
-      <!-- <ChevronsDown
-        class="bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white"
-      /> -->
       <img :src="FLECTRA_TRANSPARENT" alt="Flectra Logo" height="36px" width="36px" />
-      Flectra.ai</a>
+      PYQS</a>
     <!-- Mobile -->
     <div class="flex items-center lg:hidden">
       <Sheet v-model:open="isOpen">
@@ -121,7 +109,7 @@ const isOpen = ref<boolean>(false);
               <SheetTitle class="flex items-center">
                 <a href="/" class="flex items-center">
                   <img :src="FLECTRA_TRANSPARENT" alt="Flectra Logo" height="36px" width="36px" />
-                  Flectra.ai
+                  PYQS
                 </a>
               </SheetTitle>
             </SheetHeader>
@@ -150,7 +138,7 @@ const isOpen = ref<boolean>(false);
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger class="bg-card text-base">
-            Products
+            Features
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <div class="grid w-[250px] p-4">
@@ -185,13 +173,6 @@ const isOpen = ref<boolean>(false);
 
     <div class="hidden lg:flex">
       <ToggleTheme />
-
-      <!-- <Button as-child size="sm" variant="ghost" aria-label="View on GitHub">
-        <a aria-label="View on GitHub" href="https://github.com/leoMirandaa/shadcn-vue-landing-page.git"
-          target="_blank">
-          <GithubIcon class="size-5" />
-        </a>
-      </Button> -->
     </div>
   </header>
 </template>
