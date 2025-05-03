@@ -23,7 +23,7 @@ import FLECTRA_TRANSPARENT from "@/assets/logo.png";
               class="bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white"
             /> -->
 
-            <img :src="FLECTRA_TRANSPARENT" alt="Flectra Logo" height="36px" width="36px" />
+            <!-- <img :src="FLECTRA_TRANSPARENT" alt="Flectra Logo" height="36px" width="36px" /> -->
 
             <h3 class="text-2xl">PYQS.com</h3>
           </a>

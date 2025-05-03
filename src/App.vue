@@ -13,6 +13,8 @@ import Community from "./components/Community.vue";
 import Contact from "./components/Contact.vue";
 import FAQ from "./components/FAQ.vue";
 import Footer from "./components/Footer.vue";
+import ReviewsMarquee from '@/components/ReviewsMarquee.vue';
+
 </script>
 
 <template>
@@ -23,10 +25,12 @@ import Footer from "./components/Footer.vue";
   <Features />
   <!-- <Services /> -->
   <HowItWorks />
+  <ReviewsMarquee />
+  <Pricing />
   <!-- <Testimonials /> -->
   <!-- <Team /> -->
   <Community />
-  <!-- <Pricing /> -->
+
   <Contact />
   <FAQ />
   <Footer />
