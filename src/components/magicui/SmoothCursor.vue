@@ -116,23 +116,12 @@ onMounted(() => {
 
 <template>
   <div class="cursor-container">
-    <!-- Main cursor with heart shape -->
+    <!-- Main cursor with simple circle -->
     <div
-      class="cursor-heart"
+      class="cursor-circle"
       :class="cursorClasses"
       :style="{ transform: `translate(${cursorX}px, ${cursorY}px)` }"
     >
-      <svg 
-        viewBox="0 0 24 24" 
-        fill="currentColor" 
-        class="heart-icon"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path 
-          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-        />
-      </svg>
-      
       <!-- Text tooltip -->
       <span v-if="cursorText" class="cursor-text">{{ cursorText }}</span>
     </div>
@@ -165,38 +154,19 @@ onMounted(() => {
   overflow: hidden;
 }
 
-/* Heart-shaped cursor */
-.cursor-heart {
+/* Simple circular cursor */
+.cursor-circle {
   position: fixed;
-  width: 32px;
-  height: 32px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(140, 56, 234, 0.3);
+  border: 2px solid rgba(140, 56, 234, 0.8);
   transition: width 0.3s ease, height 0.3s ease, opacity 0.2s ease;
   will-change: transform, opacity;
-  color: rgba(220, 20, 60, 0.9); /* Crimson red */
-  filter: drop-shadow(0 0 8px rgba(220, 20, 60, 0.5));
-}
-
-.heart-icon {
-  width: 100%;
-  height: 100%;
-  animation: heart-pulse 1.2s ease-in-out infinite;
-}
-
-@keyframes heart-pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.15);
-  }
-  100% {
-    transform: scale(1);
-  }
+  backdrop-filter: blur(5px);
 }
 
 /* Small central dot */
@@ -219,21 +189,22 @@ onMounted(() => {
   position: fixed;
   width: 40px;
   height: 40px;
+  border-radius: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  background-image: radial-gradient(circle, rgba(220, 20, 60, 0.4) 0%, rgba(220, 20, 60, 0) 70%);
+  background: rgba(140, 56, 234, 0.2);
   animation: pulse-fade 1.5s ease-out infinite;
   will-change: transform, opacity;
 }
 
 @keyframes pulse-fade {
   0% {
-    opacity: 0.5;
-    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(0.5);
   }
   100% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(1.5);
+    transform: translate(-50%, -50%) scale(2);
   }
 }
 
@@ -242,26 +213,26 @@ onMounted(() => {
   opacity: 1;
 }
 
-.cursor-hovering.cursor-heart {
-  width: 45px;
-  height: 45px;
-  color: rgba(220, 20, 60, 1); /* Full red on hover */
-  filter: drop-shadow(0 0 12px rgba(220, 20, 60, 0.8));
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+.cursor-hovering.cursor-circle {
+  width: 30px;
+  height: 30px;
+  background: rgba(140, 56, 234, 0.2);
+  border-color: rgba(140, 56, 234, 1);
+  transition: all 0.3s ease;
 }
 
-.cursor-clicking.cursor-heart {
-  width: 28px;
-  height: 28px;
-  color: rgba(180, 0, 40, 1); /* Darker red when clicking */
+.cursor-clicking.cursor-circle {
+  width: 15px;
+  height: 15px;
+  background: rgba(140, 56, 234, 0.5);
+  border-color: rgba(140, 56, 234, 1);
   transition-duration: 0.1s;
-  transform: translate(-50%, -50%) scale(0.9);
 }
 
 /* Text that appears when hovering over interactive elements */
 .cursor-text {
   position: absolute;
-  top: -25px;
+  top: -30px;
   font-size: 11px;
   font-weight: 600;
   color: white;
@@ -269,9 +240,9 @@ onMounted(() => {
   letter-spacing: 1px;
   white-space: nowrap;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  background: rgba(180, 0, 40, 0.9);
-  padding: 3px 9px;
-  border-radius: 12px;
+  background: rgba(140, 56, 234, 0.9);
+  padding: 4px 10px;
+  border-radius: 8px;
   transform: translateY(0);
   animation: float 2s ease-in-out infinite;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);

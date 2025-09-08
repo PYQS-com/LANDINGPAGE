@@ -17,10 +17,21 @@ const platformFeatures = ref([
 ]);
 const currentFeatureIndex = ref(0);
 
+const examTypes = ref([
+  { text: "NEET PG", color: "gradient-text" },
+  { text: "INI-CET", color: "gradient-text" },
+  { text: "FMGE", color: "gradient-text" }
+]);
+const currentExamIndex = ref(0);
+
 onMounted(() => {
   setInterval(() => {
     currentFeatureIndex.value = (currentFeatureIndex.value + 1) % platformFeatures.value.length;
   }, 2000);
+  
+  setInterval(() => {
+    currentExamIndex.value = (currentExamIndex.value + 1) % examTypes.value.length;
+  }, 3000);
 });
 </script>
 
@@ -43,8 +54,17 @@ onMounted(() => {
 
         <div class="max-w-screen-md mx-auto text-center font-bold relative z-10">
           <h1 class="flex flex-col items-center">
-            <span class="gradient-text text-5xl md:text-6xl lg:text-7xl font-extrabold">
-              Ace NEET PG
+            <span class="text-5xl md:text-6xl lg:text-7xl font-extrabold flex items-center">
+              Ace 
+              <span class="rotating-text-container ml-4">
+                <span 
+                  class="gradient-text rotating-text" 
+                  :class="{ 'text-visible': true }"
+                  :key="currentExamIndex"
+                >
+                  {{ examTypes[currentExamIndex].text }}
+                </span>
+              </span>
             </span>
             <span class="gradient-text-opp text-5xl md:text-6xl lg:text-7xl font-extrabold mt-2 flex items-center justify-center">
               With AI First PYQS
@@ -101,42 +121,24 @@ onMounted(() => {
       </div>
 
     
-      <!-- Replace the existing image section with this browser frame implementation -->
-      <div class="relative group mt-14 browser-container">
-        <!-- Safari Browser Frame -->
-        <div class="browser-frame">
-          <!-- Browser Header -->
-          <div class="browser-header">
-            <!-- Traffic lights -->
-            <div class="traffic-lights">
-              <span class="light red"></span>
-              <span class="light yellow"></span>
-              <span class="light green"></span>
-            </div>
-            <!-- URL Bar -->
-            <div class="url-bar">
-              <div class="url-text">pyqs.com</div>
-            </div>
-          </div>
+      <!-- Simple bordered screenshot -->
+      <div class="relative group mt-14 screenshot-container">
+        <div class="screenshot-frame">
+          <img
+            class="w-full h-auto"
+            :src="mode == 'light'
+              ? 'https://res.cloudinary.com/tesalab/image/upload/v1746214525/Screenshot_2025-05-03_at_1.03.02_AM_fqcrau.png'
+              : 'https://res.cloudinary.com/tesalab/image/upload/v1746214526/Screenshot_2025-05-03_at_1.03.10_AM_zlr3v5.png'"
+            alt="PYQS Dashboard"
+          />
           
-          <!-- Browser Content -->
-          <div class="browser-content">
-            <img
-              class="w-full rounded-b-lg relative leading-none"
-              :src="mode == 'light'
-                ? 'https://res.cloudinary.com/tesalab/image/upload/v1746214525/Screenshot_2025-05-03_at_1.03.02_AM_fqcrau.png'
-                : 'https://res.cloudinary.com/tesalab/image/upload/v1746214526/Screenshot_2025-05-03_at_1.03.10_AM_zlr3v5.png'"
-              alt="PYQS Dashboard"
-            />
-            
-            <!-- Hover Overlay -->
-            <div class="browser-overlay">
-              <div class="overlay-content">
-                <span class="text-white text-2xl font-bold">Experience PYQS</span><br>
-                <Button variant="outline" class="mt-4 bg-white/20 backdrop-blur-sm text-white border-white hover:bg-white/30">
-                  Explore Dashboard
-                </Button>
-              </div>
+          <!-- Hover Overlay -->
+          <div class="screenshot-overlay">
+            <div class="overlay-content">
+              <span class="text-white text-2xl font-bold">Experience PYQS</span><br>
+              <Button variant="outline" class="mt-4 bg-white/20 backdrop-blur-sm text-white border-white hover:bg-white/30">
+                Explore Dashboard
+              </Button>
             </div>
           </div>
         </div>
@@ -181,6 +183,38 @@ onMounted(() => {
   color: transparent;
   display: inline-block;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* Rotating text animation */
+.rotating-text-container {
+  position: relative;
+  display: inline-block;
+  min-width: 300px;
+}
+
+.rotating-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .rotating-text-container {
+    min-width: 200px;
+  }
 }
 
 .gradient-text-opp {
@@ -507,106 +541,41 @@ onMounted(() => {
   }
 }
 
-/* Safari Browser Frame Styling */
-.browser-container {
-  perspective: 1000px;
+/* Simple Screenshot Frame Styling */
+.screenshot-container {
   max-width: 1200px;
   margin: 0 auto;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
 }
 
-.browser-container:hover {
+.screenshot-container:hover {
   transform: translateY(-5px);
 }
 
-.browser-frame {
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 
-              0 1px 8px rgba(0, 0, 0, 0.07),
-              0 0 1px rgba(0, 0, 0, 0.05);
-  transition: all 0.5s ease;
-  transform-origin: center;
-  background-color: white;
-}
-
-.dark .browser-frame {
-  background-color: #1a1a1a;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 
-              0 1px 8px rgba(0, 0, 0, 0.2);
-}
-
-.browser-container:hover .browser-frame {
-  animation: browser-hover 4s ease-in-out infinite;
-}
-
-@keyframes browser-hover {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px) rotateY(-1deg); }
-  75% { transform: translateX(5px) rotateY(1deg); }
-}
-
-/* Browser Header */
-.browser-header {
-  background: #f2f2f2;
-  border-bottom: 1px solid #ddd;
-  padding: 8px 12px;
-  display: flex;
-  align-items: center;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-
-.dark .browser-header {
-  background: #2c2c2c;
-  border-bottom: 1px solid #444;
-}
-
-.traffic-lights {
-  display: flex;
-  gap: 6px;
-  margin-right: 16px;
-}
-
-.light {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-
-.light.red { background-color: #ff5f56; }
-.light.yellow { background-color: #ffbd2e; }
-.light.green { background-color: #28c940; }
-
-.url-bar {
-  flex: 1;
-  background-color: #e0e0e0;
-  border-radius: 15px;
-  padding: 4px 12px;
-  font-size: 14px;
-  color: #333;
-  text-align: center;
-}
-
-.dark .url-bar {
-  background-color: #444;
-  color: #ddd;
-}
-
-.url-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* Browser Content */
-.browser-content {
+.screenshot-frame {
   position: relative;
-  line-height: 0; /* Remove gap below image */
+  border-radius: 20px;
+  overflow: hidden;
+  border: 10px solid #c0c0c0; /* Silver theme based color */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 
+              0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.dark .screenshot-frame {
+  border-color: #666666; /* Darker silver for dark mode */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 
+              0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.screenshot-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* Hover Overlay */
-.browser-overlay {
+.screenshot-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -618,11 +587,9 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
 }
 
-.browser-container:hover .browser-overlay {
+.screenshot-container:hover .screenshot-overlay {
   opacity: 1;
 }
 
@@ -633,30 +600,16 @@ onMounted(() => {
   transition: all 0.4s ease 0.1s;
 }
 
-.browser-container:hover .overlay-content {
+.screenshot-container:hover .overlay-content {
   transform: translateY(0);
   opacity: 1;
 }
 
-/* Responsive styles for the browser frame */
+/* Responsive styles for the screenshot frame */
 @media (max-width: 768px) {
-  .browser-header {
-    padding: 6px 8px;
-  }
-  
-  .traffic-lights {
-    gap: 4px;
-    margin-right: 8px;
-  }
-  
-  .light {
-    width: 8px;
-    height: 8px;
-  }
-  
-  .url-bar {
-    padding: 2px 8px;
-    font-size: 12px;
+  .screenshot-frame {
+    border-width: 6px;
+    border-radius: 15px;
   }
   
   .overlay-content {
