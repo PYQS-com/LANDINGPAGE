@@ -54,8 +54,8 @@ onMounted(() => {
 
         <div class="max-w-screen-md mx-auto text-center font-bold relative z-10">
           <h1 class="flex flex-col items-center">
-            <span class="text-5xl md:text-6xl lg:text-7xl font-extrabold flex items-center">
-              Ace 
+            <span class="text-5xl md:text-6xl lg:text-7xl font-extrabold flex items-center justify-center">
+              <span>Ace</span>
               <span class="rotating-text-container ml-4">
                 <span 
                   class="gradient-text rotating-text" 
@@ -190,6 +190,9 @@ onMounted(() => {
   position: relative;
   display: inline-block;
   min-width: 300px;
+  text-align: left;
+  overflow: hidden;
+  height: 1.2em; /* Set a fixed height to prevent layout shift */
 }
 
 .rotating-text {
@@ -197,6 +200,7 @@ onMounted(() => {
   top: 0;
   left: 0;
   width: 100%;
+  text-align: left;
   animation: slideInUp 0.6s ease-out;
 }
 
@@ -214,6 +218,12 @@ onMounted(() => {
 @media (max-width: 768px) {
   .rotating-text-container {
     min-width: 200px;
+    margin-left: 0.5rem; /* Reduce margin on mobile */
+  }
+  
+  /* Ensure proper text alignment on mobile */
+  .text-5xl.md\\:text-6xl.lg\\:text-7xl {
+    text-align: center;
   }
 }
 
