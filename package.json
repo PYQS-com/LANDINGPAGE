@@ -1,7 +1,7 @@
 {
   "name": "shadcn-vue-landing-page",
   "description": "Shadcn/Vue landing page template using Vue, Shadcn/Vue + TypeScript + Tailwind CSS.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "Leopoldo Miranda",
     "email": "leomirandadev@gmail.com",
