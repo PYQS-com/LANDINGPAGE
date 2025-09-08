@@ -43,7 +43,7 @@ const props = defineProps({
   },
 })
 
-const target = ref(null)
+const target = ref<HTMLElement | null>(null)
 const isInView = ref(false)
 
 // Split text
@@ -82,8 +82,8 @@ function setDataAttributes() {
   if (target.value) {
     // Set the data-text attribute to match the text content
     const spans = target.value.querySelectorAll('span');
-    spans.forEach(span => {
-      span.setAttribute('data-text', span.textContent);
+    spans.forEach((span: HTMLElement) => {
+      span.setAttribute('data-text', span.textContent || '');
     });
   }
 }

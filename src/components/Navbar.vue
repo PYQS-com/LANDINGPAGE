@@ -25,12 +25,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-import { ChevronsDown, Menu, Sun, Moon, ArrowRight } from "lucide-vue-next";
-import GithubIcon from "@/icons/GithubIcon.vue";
+import { Menu, Moon, ArrowRight } from "lucide-vue-next";
 import ToggleTheme from "./ToggleTheme.vue";
 
 import FLECTRA_TRANSPARENT from "@/assets/logo.png";
-import NAV_IMG from "@/assets/NAV_IMG.gif";
 
 interface RouteProps {
   href: string;

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-const props = defineProps({
+defineProps({
   content: {
     type: String,
     required: true
@@ -20,10 +20,10 @@ const props = defineProps({
   }
 })
 
-const container = ref(null)
+const container = ref<HTMLElement | null>(null)
 const scrollDirection = ref(1) // 1 for down, -1 for up
 const lastScrollTop = ref(0)
-const sections = ref([
+const sections = ref<{ direction: number; element: HTMLElement | null }[]>([
   { direction: 1, element: null }, // left to right
   { direction: -1, element: null } // right to left
 ])
@@ -44,7 +44,7 @@ function handleScroll() {
 
 // Update scroll positions based on current direction
 function updateScrollAnimation() {
-  sections.value.forEach((section, index) => {
+  sections.value.forEach((section) => {
     if (!section.element) return
     
     // Base direction for the section
@@ -69,7 +69,7 @@ onMounted(() => {
     const sectionElements = container.value.querySelectorAll('.infinite-scroll-section')
     sections.value.forEach((section, index) => {
       if (sectionElements[index]) {
-        section.element = sectionElements[index]
+        section.element = sectionElements[index] as HTMLElement
       }
     })
   }

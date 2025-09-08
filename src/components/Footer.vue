@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { ChevronsDown } from "lucide-vue-next";
 import Separator from "./ui/separator/Separator.vue";
-
-import FLECTRA_TRANSPARENT from "@/assets/logo.png";
 </script>
 
 <template>

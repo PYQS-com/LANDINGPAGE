@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
-import { useColorMode } from "@vueuse/core";
 
-// Use the same theme system as the rest of the app
-const mode = useColorMode();
+// Extend Window interface to include scrollTimeout
+declare global {
+  interface Window {
+    scrollTimeout: number | NodeJS.Timeout;
+  }
+}
 
 // Store direction state
 const direction1 = ref('rtl'); // 'rtl' or 'ltr'

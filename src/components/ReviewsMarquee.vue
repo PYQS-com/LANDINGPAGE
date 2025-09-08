@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { useColorMode } from "@vueuse/core";
-const mode = useColorMode();
 
 interface Review {
   id: number;

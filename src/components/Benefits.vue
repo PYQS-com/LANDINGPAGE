@@ -9,7 +9,6 @@ import {
   LineChart,
   Wallet,
   ShieldCheck,
-  gear,
   Workflow,
 } from "lucide-vue-next";
 
