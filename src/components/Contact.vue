@@ -1,48 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive } from "vue";
-import { Button } from "./ui/button";
-import { Card, CardHeader, CardContent, CardFooter } from "./ui/card";
-import { Label } from "./ui/label";
-import { Input } from "./ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select";
-import { Textarea } from "./ui/textarea";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-
-import { AlertCircle, Building2, Phone, Mail, Clock } from "lucide-vue-next";
-
-interface ContactFormeProps {
-  firstName: string;
-  lastName: string;
-  email: string;
-  subject: string;
-  message: string;
-}
-
-const contactForm = reactive<ContactFormeProps>({
-  firstName: "",
-  lastName: "",
-  email: "",
-  subject: "Web Development",
-  message: "",
-});
-
-const invalidInputForm = ref<boolean>(false);
-
-const handleSubmit = () => {
-  const { firstName, lastName, email, subject, message } = contactForm;
-  console.log(contactForm);
-
-  const mailToLink = `mailto:mail@gmail.com?subject=${subject}&body=Hello I am ${firstName} ${lastName}, my Email is ${email}. %0D%0A${message}`;
-
-  window.location.href = mailToLink;
-};
+import { Mail } from "lucide-vue-next";
 </script>
 
 <template>
@@ -50,151 +7,108 @@ const handleSubmit = () => {
     id="contact"
     class="container py-24 sm:py-32"
   >
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div>
-        <div class="mb-4">
-          <h2 class="text-lg text-primary mb-2 tracking-wider">Contact</h2>
-
-          <h2 class="text-3xl md:text-4xl font-bold">Connect With Us</h2>
-        </div>
-        <p class="mb-8 text-muted-foreground lg:w-5/6">
-          
-        </p>
-
-        <div class="flex flex-col gap-4">
-          <div>
-            <div class="flex gap-2 mb-1">
-              <Building2 />
-              <div class="font-bold">Find us</div>
-            </div>
-
-            <div>Bangalore</div>
-          </div>
-
-          <div>
-            <div class="flex gap-2 mb-1">
-              <Phone />
-              <div class="font-bold">Call us</div>
-            </div>
-
-            <div>+91 9999999999</div>
-          </div>
-
-          <div>
-            <div class="flex gap-2 mb-1">
-              <Mail />
-              <div class="font-bold">Mail US</div>
-            </div>
-
-            <div>pyqs.info@gmail.com</div>
-          </div>
-
-          <div>
-            <div class="flex gap-2">
-              <Clock />
-              <div class="font-bold">Visit us</div>
-            </div>
-
-            <div>
-              <div>Monday - Friday</div>
-              <div>8AM - 4PM</div>
-            </div>
-          </div>
-        </div>
+    <div class="text-center max-w-2xl mx-auto">
+      <div class="mb-8">
+        <h2 class="text-lg text-primary mb-2 tracking-wider">Contact</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">Get In Touch</h2>
       </div>
-
-      <!-- form -->
-      <Card class="bg-muted/60 dark:bg-card">
-        <CardHeader class="text-primary text-2xl"> </CardHeader>
-        <CardContent>
-          <form
-            @submit.prevent="handleSubmit"
-            class="grid gap-4"
-          >
-            <div class="flex flex-col md:flex-row gap-8">
-              <div class="flex flex-col w-full gap-1.5">
-                <Label for="first-name">First Name</Label>
-                <Input
-                  id="first-name"
-                  type="text"
-                  placeholder=""
-                  v-model="contactForm.firstName"
-                />
-              </div>
-
-              <div class="flex flex-col w-full gap-1.5">
-                <Label for="last-name">Last Name</Label>
-                <Input
-                  id="last-name"
-                  type="text"
-                  placeholder=""
-                  v-model="contactForm.lastName"
-                />
-              </div>
-            </div>
-
-            <div class="flex flex-col gap-1.5">
-              <Label for="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder=""
-                v-model="contactForm.email"
-              />
-            </div>
-
-            <div class="flex flex-col gap-1.5">
-              <Label for="subject">Subject</Label>
-
-              <Select v-model="contactForm.subject">
-                <SelectTrigger>
-                  <SelectValue placeholder="Select a subject" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectItem value="Web Development">
-                      General Inquiry
-                    </SelectItem>
-                    <SelectItem value="Mobile Development">
-                      Partnership
-                    </SelectItem>
-                    <SelectItem value="Figma Design">  Career</SelectItem>
-                    <SelectItem value="REST API "> Affiliation </SelectItem>
-                    <SelectItem value="FullStack Project">
-                      Investor Relations
-                    </SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div class="flex flex-col gap-1.5">
-              <Label for="message">Message</Label>
-              <Textarea
-                id="message"
-                placeholder="Your message..."
-                rows="5"
-                v-model="contactForm.message"
-              />
-            </div>
-
-            <Alert
-              v-if="invalidInputForm"
-              variant="destructive"
+      
+      <div class="contact-email-container">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <div class="email-icon-container">
+            <Mail class="email-icon" />
+          </div>
+          <div>
+            <div class="font-bold text-lg mb-1">Email us</div>
+            <a 
+              href="mailto:hello@pyqs.com" 
+              class="email-link text-xl font-medium"
             >
-              <AlertCircle class="w-4 h-4" />
-              <AlertTitle>Error</AlertTitle>
-              <AlertDescription>
-                There is an error in the form. Please check your input.
-              </AlertDescription>
-            </Alert>
-
-            <Button class="mt-4">Send message</Button>
-          </form>
-        </CardContent>
-
-        <CardFooter></CardFooter>
-      </Card>
-    </section>
+              hello@pyqs.com
+            </a>
+          </div>
+        </div>
+        <p class="text-muted-foreground">
+          We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+        </p>
+      </div>
+    </div>
   </section>
 </template>
+
+<style scoped>
+.contact-email-container {
+  padding: 2rem;
+  border-radius: 16px;
+  background: rgba(140, 56, 234, 0.05);
+  border: 1px solid rgba(140, 56, 234, 0.1);
+  transition: all 0.3s ease;
+}
+
+.dark .contact-email-container {
+  background: rgba(140, 56, 234, 0.1);
+  border: 1px solid rgba(140, 56, 234, 0.2);
+}
+
+.contact-email-container:hover {
+  background: rgba(140, 56, 234, 0.08);
+  border-color: rgba(140, 56, 234, 0.2);
+  transform: translateY(-2px);
+}
+
+.dark .contact-email-container:hover {
+  background: rgba(140, 56, 234, 0.15);
+  border-color: rgba(140, 56, 234, 0.3);
+}
+
+.email-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #8c38ea, #5c50eb);
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(140, 56, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.email-icon {
+  width: 28px;
+  height: 28px;
+  color: white;
+}
+
+.email-icon-container:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(140, 56, 234, 0.4);
+}
+
+.email-link {
+  color: hsl(var(--primary));
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.email-link:hover {
+  color: rgba(140, 56, 234, 0.8);
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-email-container {
+    padding: 1.5rem;
+  }
+  
+  .email-icon-container {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .email-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+</style>

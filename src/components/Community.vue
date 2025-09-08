@@ -9,7 +9,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 
-import { Send } from "lucide-vue-next";
+// Telegram icon will be created as SVG directly in template
 </script>
 
 <template>
@@ -26,7 +26,9 @@ import { Send } from "lucide-vue-next";
           <CardHeader>
             <CardTitle class="text-4xl md:text-5xl font-bold">
               <div class="telegram-icon-container mb-4">
-                <Send class="telegram-icon" />
+                <svg class="telegram-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-.15.04-.15.04s-1.7 1.08-4.81 3.15c-.45.31-.86.46-1.23.45-.4-.01-1.18-.23-1.76-.42-.7-.23-1.26-.35-1.21-.74.03-.2.36-.4.98-.6 3.76-1.65 6.26-2.73 7.51-3.26 3.58-1.51 4.32-1.78 4.81-1.78.11 0 .35.03.51.17.13.12.17.27.19.38-.01.06-.01.24-.01.24z"/>
+                </svg>
               </div>
               Ready to join our
               <span
@@ -75,7 +77,6 @@ import { Send } from "lucide-vue-next";
   width: 40px;
   height: 40px;
   color: white;
-  transform: rotate(-45deg);
 }
 
 .telegram-icon-container:hover {

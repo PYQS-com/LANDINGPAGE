@@ -407,10 +407,7 @@ onMounted(() => {
   transform: translateY(-3px);
 }
 
-/* Dark mode styles for reviews card */
-.dark .reviews-card {
-  /* Dark mode background styling removed */
-}
+/* Dark mode styles for reviews card - removed empty ruleset */
 
 /* Customer avatars styling - enhanced */
 .customer-avatars {
