@@ -96,7 +96,7 @@ const isOpen = ref<boolean>(false);
       PYQS</a>
     <!-- Mobile -->
     <div class="flex items-center lg:hidden">
-      <Button variant="outline" class="mr-2">
+      <Button variant="outline" class="mr-2" @click="mode = mode === 'dark' ? 'light' : 'dark'">
         <span v-if="mode === 'light'" class="flex items-center gap-2">
           <div class="w-6 h-6 rounded-full bg-gradient-to-r from-orange-300 to-amber-300"></div>
           Light
