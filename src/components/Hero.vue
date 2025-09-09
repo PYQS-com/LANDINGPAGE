@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-vue-next";
 import sunglassesEmoji from "@/assets/GIFS/SUNGLASS.png"
+import desktopScreenshot from "@/assets/DESKTOPSS.png"
 
 const platformFeatures = ref([
   { text: "Mock Tests", color: "purple-gradient" },
@@ -99,10 +100,10 @@ onMounted(() => {
               <!-- Left side - Customer avatars with staggered animation -->
               <div class="customer-avatars flex">
                 <div class="avatar-circle animate-avatar" style="animation-delay: 100ms; background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=120&h=120&fit=crop&crop=face&auto=format')"></div>
-                <div class="avatar-circle animate-avatar" style="animation-delay: 200ms; background-image: url('https://images.unsplash.com/photo-1594824673514-90b6b4f21acc?w=120&h=120&fit=crop&crop=face&auto=format')"></div>
+                <div class="avatar-circle animate-avatar" style="animation-delay: 200ms; background-image: url('https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=120&h=120&fit=crop&crop=face&auto=format')"></div>
                 <div class="avatar-circle animate-avatar" style="animation-delay: 300ms; background-image: url('https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=120&h=120&fit=crop&crop=face&auto=format')"></div>
-                <div class="avatar-circle animate-avatar" style="animation-delay: 400ms; background-image: url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=120&h=120&fit=crop&crop=face&auto=format')"></div>
-                <div class="avatar-circle animate-avatar" style="animation-delay: 500ms; background-image: url('https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=120&h=120&fit=crop&crop=face&auto=format')"></div>
+                <div class="avatar-circle animate-avatar" style="animation-delay: 400ms; background-image: url('https://img.freepik.com/free-photo/young-doctor-getting-ready-work_23-2149393691.jpg'); background-size: cover; background-position: center top;"></div>
+                <div class="avatar-circle animate-avatar" style="animation-delay: 500ms; background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop&crop=face&auto=format')"></div>
               </div>
               
               <!-- Right side - Rating text with fade-in animation -->
@@ -128,9 +129,7 @@ onMounted(() => {
         <div class="screenshot-frame">
           <img
             class="w-full h-auto"
-            :src="mode == 'light'
-              ? 'https://res.cloudinary.com/tesalab/image/upload/v1746214525/Screenshot_2025-05-03_at_1.03.02_AM_fqcrau.png'
-              : 'https://res.cloudinary.com/tesalab/image/upload/v1746214526/Screenshot_2025-05-03_at_1.03.10_AM_zlr3v5.png'"
+            :src="desktopScreenshot"
             alt="PYQS Dashboard"
           />
           
