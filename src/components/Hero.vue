@@ -81,9 +81,11 @@ onMounted(() => {
         </p>
 
         <div class="space-y-4 md:space-y-0 md:space-x-4 relative z-10">
-          <Button class="w-5/6 md:w-1/4 font-bold group/arrow gradient-button">
-            Start Learning
-            <ArrowRight class="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
+          <Button as-child class="w-5/6 md:w-1/4 font-bold group/arrow gradient-button">
+            <a href="https://tally.so/r/wM0azk" target="_blank" rel="noopener noreferrer">
+              Start Learning
+              <ArrowRight class="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
+            </a>
           </Button>
           <Button as-child variant="secondary" class="w-5/6 md:w-1/4 font-bold bg-white border-black dark:bg-grey dark:border-white dark:text-black">
             <a href="#contact">Get in Touch</a>
@@ -96,11 +98,11 @@ onMounted(() => {
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
               <!-- Left side - Customer avatars with staggered animation -->
               <div class="customer-avatars flex">
-                <div class="avatar-circle animate-avatar" style="animation-delay: 100ms; background-image: url('https://media.istockphoto.com/id/1301397300/photo/portrait-of-young-woman-stock-photo.jpg?s=612x612&w=0&k=20&c=Xvgo-k58_woBTuQaRNZ4JXP2SQsw_RSbrlSbt7XbQlU=')"></div>
-                <div class="avatar-circle animate-avatar" style="animation-delay: 200ms; background-image: url('https://media.gettyimages.com/id/1336832660/photo/male-teenage-student-in-yellow-background-stock-photo.jpg?s=612x612&w=gi&k=20&c=axC7-4wp2tcV2kZChENGjoenwbhzVmg3ZCV_kdzxfPw=')"></div>
-                <div class="avatar-circle animate-avatar" style="animation-delay: 300ms; background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlWh2cG1B76wiCwH3jsqkkayYEusRq7d-EmjBzKfxf4BEWExxpuHW4Q7gkGrV7qSLi1Ec&usqp=CAU')"></div>
-                <div class="avatar-circle animate-avatar" style="animation-delay: 400ms; background-image: url('https://media.istockphoto.com/id/1222372717/photo/indian-young-girl-stock-images.jpg?s=612x612&w=0&k=20&c=OYtnDHPUcBMzT_CYBKETl1_f5DFOCHfXo3hY0R9pinM=')"></div>
-                <div class="avatar-circle animate-avatar" style="animation-delay: 500ms; background-image: url('https://media.istockphoto.com/id/1286771193/photo/young-woman-facial-expression-stock-photo.jpg?s=612x612&w=0&k=20&c=5LDI3DgXzp2VX7IV53i5eqPmxt3-5mayRuXNsRajgps=')"></div>
+                <div class="avatar-circle animate-avatar" style="animation-delay: 100ms; background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=120&h=120&fit=crop&crop=face&auto=format')"></div>
+                <div class="avatar-circle animate-avatar" style="animation-delay: 200ms; background-image: url('https://images.unsplash.com/photo-1594824673514-90b6b4f21acc?w=120&h=120&fit=crop&crop=face&auto=format')"></div>
+                <div class="avatar-circle animate-avatar" style="animation-delay: 300ms; background-image: url('https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=120&h=120&fit=crop&crop=face&auto=format')"></div>
+                <div class="avatar-circle animate-avatar" style="animation-delay: 400ms; background-image: url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=120&h=120&fit=crop&crop=face&auto=format')"></div>
+                <div class="avatar-circle animate-avatar" style="animation-delay: 500ms; background-image: url('https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=120&h=120&fit=crop&crop=face&auto=format')"></div>
               </div>
               
               <!-- Right side - Rating text with fade-in animation -->

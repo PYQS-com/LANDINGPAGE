@@ -10,8 +10,8 @@ const isClicking = ref(false);
 const isVisible = ref(false);
 const cursorText = ref('');
 
-// Smoothing factor for cursor movement
-const smoothFactor = 0.16;
+// Smoothing factor for cursor movement (higher = faster, lower = smoother)
+const smoothFactor = 0.25;
 
 // Cursor state classes
 const cursorClasses = computed(() => ({
@@ -164,8 +164,8 @@ onMounted(() => {
   opacity: 0;
   background: rgba(140, 56, 234, 0.3);
   border: 2px solid rgba(140, 56, 234, 0.8);
-  transition: width 0.3s ease, height 0.3s ease, opacity 0.2s ease;
-  will-change: transform, opacity;
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.15s ease;
+  will-change: transform;
   backdrop-filter: blur(5px);
 }
 
@@ -178,7 +178,7 @@ onMounted(() => {
   background: #ffffff;
   transform: translate(-50%, -50%);
   opacity: 0;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.15s ease;
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
   will-change: transform;
   z-index: 2;
@@ -218,7 +218,7 @@ onMounted(() => {
   height: 30px;
   background: rgba(140, 56, 234, 0.2);
   border-color: rgba(140, 56, 234, 1);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .cursor-clicking.cursor-circle {

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Navbar from "./components/Navbar.vue";
 import Hero from "./components/Hero.vue";
-import HowItWorks from "./components/HowItWorks.vue";
+import TabFeatures from "./components/TabFeatures.vue";
 import Sponsors from "./components/Sponsors.vue";
 import Community from "./components/Community.vue";
 import Contact from "./components/Contact.vue";
@@ -22,7 +22,7 @@ import SmoothCursor from "./components/magicui/SmoothCursor.vue";
       <!-- <Benefits />
       <Features /> -->
       <!-- <Services /> -->
-      <HowItWorks />
+      <TabFeatures />
       <ReviewsMarquee />
       <!-- <Pricing /> -->
       <!-- <Testimonials /> -->

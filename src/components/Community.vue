@@ -45,7 +45,7 @@ import { Button } from "@/components/ui/button";
           <CardFooter>
             <Button as-child class="telegram-button">
               <a
-                href="https://t.me/pyqscom"
+                href="https://t.me/pyqs_com"
                 target="_blank"
               >
                 Join Telegram

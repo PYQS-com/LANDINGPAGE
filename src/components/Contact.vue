@@ -37,15 +37,23 @@ import { Mail } from "lucide-vue-next";
 </template>
 
 <style scoped>
-/* Gradient text styling matching other components */
+/* Gradient text styling for Contact section */
 .gradient-text {
-  background: linear-gradient(90deg, #8c38ea 0%, #5c50eb 50%, #395deb 100%);
+  background: linear-gradient(90deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   display: inline-block;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.dark .gradient-text {
+  background: linear-gradient(90deg, #ffffff 0%, #f0f0f0 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .contact-email-container {
@@ -63,11 +71,11 @@ import { Mail } from "lucide-vue-next";
 
 .contact-email-container:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(140, 56, 234, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .dark .contact-email-container:hover {
-  box-shadow: 0 8px 25px rgba(140, 56, 234, 0.15);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.05);
 }
 
 .email-icon-container {
@@ -76,10 +84,15 @@ import { Mail } from "lucide-vue-next";
   justify-content: center;
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #8c38ea, #5c50eb);
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
   border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(140, 56, 234, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+}
+
+.dark .email-icon-container {
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
 .email-icon {
@@ -88,23 +101,40 @@ import { Mail } from "lucide-vue-next";
   color: white;
 }
 
+.dark .email-icon {
+  color: #1a1a1a;
+}
+
 .email-icon-container:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(140, 56, 234, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark .email-icon-container:hover {
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
 }
 
 .email-link {
-  color: hsl(var(--primary));
+  color: #1a1a1a;
   text-decoration: none;
   transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.dark .email-link {
+  color: #ffffff;
 }
 
 .email-link:hover {
-  color: rgba(140, 56, 234, 0.8);
+  color: #2d2d2d;
   text-decoration: underline;
 }
 
-/* Animation keyframes matching other components */
+.dark .email-link:hover {
+  color: #f0f0f0;
+}
+
+/* Animation keyframes */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
