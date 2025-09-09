@@ -64,8 +64,8 @@ import { Button } from "@/components/ui/button";
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   margin: 0 auto;
   background: linear-gradient(135deg, #0088cc, #229ED9);
   border-radius: 50%;
@@ -73,9 +73,21 @@ import { Button } from "@/components/ui/button";
   transition: all 0.3s ease;
 }
 
+@media (min-width: 768px) {
+  .telegram-icon-container {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .telegram-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 .telegram-icon {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   color: white;
 }
 

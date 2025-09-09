@@ -126,12 +126,6 @@ onMounted(() => {
       <span v-if="cursorText" class="cursor-text">{{ cursorText }}</span>
     </div>
     
-    <!-- Small dot for precise pointing -->
-    <div
-      class="cursor-dot"
-      :class="cursorClasses"
-      :style="{ transform: `translate(${cursorX}px, ${cursorY}px)` }"
-    ></div>
     
     <!-- Pulse effect -->
     <div
@@ -157,8 +151,8 @@ onMounted(() => {
 /* Simple circular cursor */
 .cursor-circle {
   position: fixed;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
@@ -166,23 +160,9 @@ onMounted(() => {
   border: 2px solid rgba(140, 56, 234, 0.8);
   transition: width 0.2s ease, height 0.2s ease, opacity 0.15s ease;
   will-change: transform;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(2px);
 }
 
-/* Small central dot */
-.cursor-dot {
-  position: fixed;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #ffffff;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.15s ease;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
-  will-change: transform;
-  z-index: 2;
-}
 
 /* Pulse effect */
 .cursor-pulse {
@@ -214,9 +194,9 @@ onMounted(() => {
 }
 
 .cursor-hovering.cursor-circle {
-  width: 30px;
-  height: 30px;
-  background: rgba(140, 56, 234, 0.2);
+  width: 32px;
+  height: 32px;
+  background: rgba(140, 56, 234, 0.4);
   border-color: rgba(140, 56, 234, 1);
   transition: all 0.2s ease;
 }

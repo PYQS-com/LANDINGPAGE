@@ -14,9 +14,25 @@ interface TabFeature {
   };
 }
 
-const activeTab = ref('gamified');
+const activeTab = ref('ai');
 
 const tabFeatures: TabFeature[] = [
+  {
+    id: 'ai',
+    title: 'AI Assistant',
+    icon: MessageSquare,
+    description: 'Smart Study Companion',
+    content: {
+      title: 'Your Personal AI Tutor',
+      subtitle: 'Get instant help with medical concepts, practice questions, and study guidance.',
+      features: [
+        'Instant answers to medical queries',
+        'Personalized study recommendations',
+        'Doubt clarification and explanations',
+        'Custom quiz generation based on topics'
+      ]
+    }
+  },
   {
     id: 'gamified',
     title: 'Gamified Learning',
@@ -37,7 +53,7 @@ const tabFeatures: TabFeature[] = [
     id: 'pyqs',
     title: 'PYQS Database',
     icon: BookOpen,
-    description: 'Previous Year Questions',
+    description: 'AI first PYQS.com',
     content: {
       title: 'Master Exam Patterns',
       subtitle: 'Access comprehensive previous year questions with detailed solutions and analysis.',
@@ -46,22 +62,6 @@ const tabFeatures: TabFeature[] = [
         'INI-CET and FMGE question banks',
         'Topic-wise and year-wise filtering',
         'Detailed explanations for every answer'
-      ]
-    }
-  },
-  {
-    id: 'ai',
-    title: 'AI Assistant',
-    icon: MessageSquare,
-    description: 'Smart Study Companion',
-    content: {
-      title: 'Your Personal AI Tutor',
-      subtitle: 'Get instant help with medical concepts, practice questions, and study guidance.',
-      features: [
-        'Instant answers to medical queries',
-        'Personalized study recommendations',
-        'Doubt clarification and explanations',
-        'Custom quiz generation based on topics'
       ]
     }
   },
@@ -172,15 +172,23 @@ const getDotColor = (tabId: string) => {
           :key="tab.id"
           @click="setActiveTab(tab.id)"
           :class="[
-            'flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300',
+            'flex items-center rounded-full transition-all duration-300',
             'border-2 font-medium transform hover:scale-105',
+            // Mobile: circular buttons, expand when active
+            'w-12 h-12 p-0 justify-center md:w-auto md:px-6 md:py-3 md:gap-2',
+            // Add gap and padding when active on mobile
+            activeTab === tab.id ? 'gap-2 px-4 py-3 w-auto' : '',
             activeTab === tab.id
               ? getActiveTabStyle(tab.id)
               : 'bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-foreground hover:shadow-md'
           ]"
         >
           <component :is="tab.icon" class="w-5 h-5" />
-          <span>{{ tab.title }}</span>
+          <span :class="[
+            // Show text on desktop always, on mobile only when active
+            'md:inline',
+            activeTab === tab.id ? 'inline' : 'hidden md:inline'
+          ]">{{ tab.title }}</span>
         </button>
       </div>
 

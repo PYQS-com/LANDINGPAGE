@@ -150,14 +150,7 @@ import Separator from "./ui/separator/Separator.vue";
       <Separator class="my-6" />
       <section className="">
         <h3 class="">
-          &copy; 2025 Designed and developed by
-          <a
-            target="_blank"
-            href=""
-            className="text-primary transition-all border-primary hover:border-b-2"
-          >
-            PYQS.com
-          </a>
+          &copy; 2025 PYQs. All rights reserved.
         </h3>
       </section>
     </div>

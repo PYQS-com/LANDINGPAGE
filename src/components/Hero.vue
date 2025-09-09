@@ -54,31 +54,32 @@ onMounted(() => {
         </Badge>
 
         <div class="max-w-screen-md mx-auto text-center font-bold relative z-10">
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight">
             Ace 
             <span class="gradient-text rotating-text-inline" :key="currentExamIndex">
               {{ examTypes[currentExamIndex].text }}
             </span>
-            <span class="gradient-text-opp"> with AI First PYQS</span>
-            <img :src="sunglassesEmoji" alt="Sunglasses Emoji" class="sunglasses-emoji ml-2" height="100px" width="100px"/>
+            <img :src="sunglassesEmoji" alt="Sunglasses Emoji" class="sunglasses-emoji ml-2"/>
+            <br class="block" />
+            <span class="gradient-text-opp text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"> Previous Year Questions</span>
           </h1>
         </div>
 
-        <p class="max-w-screen-sm mx-auto text-2xl font-medium text-muted-foreground relative z-10">
+        <p class="max-w-screen-sm mx-auto text-lg sm:text-xl md:text-2xl font-medium text-muted-foreground relative z-10">
           Your all-in-one learning platform for 
-          <span class="font-semibold text-2xl" :class="platformFeatures[currentFeatureIndex].color">
+          <span class="font-semibold" :class="platformFeatures[currentFeatureIndex].color">
             {{ platformFeatures[currentFeatureIndex].text }}
           </span>
         </p>
 
-        <div class="space-y-4 md:space-y-0 md:space-x-4 relative z-10">
-          <Button as-child class="w-5/6 md:w-1/4 font-bold group/arrow gradient-button">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
+          <Button as-child class="w-full sm:w-auto px-8 py-3 font-bold group/arrow gradient-button">
             <a href="https://tally.so/r/wM0azk" target="_blank" rel="noopener noreferrer">
               Start Learning
               <ArrowRight class="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
             </a>
           </Button>
-          <Button as-child variant="secondary" class="w-5/6 md:w-1/4 font-bold bg-white border-black dark:bg-grey dark:border-white dark:text-black">
+          <Button as-child variant="secondary" class="w-full sm:w-auto px-8 py-3 font-bold bg-white border-black dark:bg-grey dark:border-white dark:text-black">
             <a href="#contact">Get in Touch</a>
           </Button>
         </div>
@@ -242,9 +243,30 @@ onMounted(() => {
 .sunglasses-emoji {
   display: inline-block;
   vertical-align: middle;
-  height: 100px;
-  width: 100px;
+  height: 40px;
+  width: 40px;
   animation: emoji-bounce 2.5s ease-in-out infinite;
+}
+
+@media (min-width: 640px) {
+  .sunglasses-emoji {
+    height: 60px;
+    width: 60px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sunglasses-emoji {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sunglasses-emoji {
+    height: 100px;
+    width: 100px;
+  }
 }
 
 @keyframes emoji-bounce {

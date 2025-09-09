@@ -93,7 +93,7 @@ const isOpen = ref<boolean>(false);
   }">
    <!-- <img :src="FLECTRA_TRANSPARENT" alt="Flectra Logo" height="36px" width="36px" /> -->
     <a href="/" class="font-bold text-lg flex items-center ml-3">
-      PYQS</a>
+      PYQs.com</a>
     <!-- Mobile -->
     <div class="flex items-center lg:hidden">
       <Button variant="outline" class="mr-2" @click="mode = mode === 'dark' ? 'light' : 'dark'">
@@ -118,7 +118,7 @@ const isOpen = ref<boolean>(false);
               <SheetTitle class="flex items-center">
                 <a href="/" class="flex items-center">
                   <img :src="FLECTRA_TRANSPARENT" alt="Flectra Logo" height="36px" width="36px" />
-                  PYQS
+                  PYQs.com
                 </a>
               </SheetTitle>
             </SheetHeader>

@@ -196,13 +196,43 @@ onUnmounted(() => {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .marquee-item {
-    font-size: 70px;
+    font-size: 60px;
     margin: 0 1rem;
   }
   .marquee-sep {
     margin: 0 0.7rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .marquee-item {
+    font-size: 50px;
+    margin: 0 0.8rem;
+  }
+  .marquee-sep {
+    margin: 0 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-item {
+    font-size: 40px;
+    margin: 0 0.6rem;
+  }
+  .marquee-sep {
+    margin: 0 0.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .marquee-item {
+    font-size: 32px;
+    margin: 0 0.4rem;
+  }
+  .marquee-sep {
+    margin: 0 0.3rem;
   }
 }
 </style>

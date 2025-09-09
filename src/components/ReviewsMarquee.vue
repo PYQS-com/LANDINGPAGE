@@ -542,14 +542,35 @@ onMounted(() => {
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
   .review-card {
-    width: 280px;
-    padding: 1.25rem;
+    width: 260px;
+    padding: 1rem;
   }
   
   .avatar-wrapper {
     width: 48px;
     height: 48px;
     padding: 2px;
+  }
+  
+  .name {
+    font-size: 0.85rem;
+  }
+  
+  .college {
+    font-size: 0.75rem;
+    max-width: 140px;
+  }
+  
+  .review-content {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-card {
+    width: 240px;
+    padding: 0.875rem;
   }
   
   .name {
@@ -563,6 +584,13 @@ onMounted(() => {
   
   .review-content {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .review-card {
+    width: 220px;
+    padding: 0.75rem;
   }
 }
 </style>
