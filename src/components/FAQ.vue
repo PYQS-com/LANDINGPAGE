@@ -35,7 +35,7 @@ const FAQList: FAQProps[] = [
   },
   {
     question: "Can I access previous year questions from multiple years?",
-    answer: "Yes, PYQS provides comprehensive question banks from the last 20+ years for NEET PG, with detailed explanations and topic-wise categorization for better preparation.",
+    answer: "Yes, PYQS provides comprehensive question banks from the last 5+ years for NEET PG, with detailed explanations and topic-wise categorization for better preparation.",
     value: "item-5",
   },
   {

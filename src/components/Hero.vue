@@ -54,23 +54,13 @@ onMounted(() => {
         </Badge>
 
         <div class="max-w-screen-md mx-auto text-center font-bold relative z-10">
-          <h1 class="flex flex-col items-center">
-            <span class="text-5xl md:text-6xl lg:text-7xl font-extrabold flex items-center justify-center">
-              <span>Ace</span>
-              <span class="rotating-text-container ml-4">
-                <span 
-                  class="gradient-text rotating-text" 
-                  :class="{ 'text-visible': true }"
-                  :key="currentExamIndex"
-                >
-                  {{ examTypes[currentExamIndex].text }}
-                </span>
-              </span>
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+            Ace 
+            <span class="gradient-text rotating-text-inline" :key="currentExamIndex">
+              {{ examTypes[currentExamIndex].text }}
             </span>
-            <span class="gradient-text-opp text-5xl md:text-6xl lg:text-7xl font-extrabold mt-2 flex items-center justify-center">
-              With AI First PYQS
-              <img :src="sunglassesEmoji" alt="Sunglasses Emoji" class="sunglasses-emoji ml-2" height="100px" width="100px"/>
-            </span>
+            <span class="gradient-text-opp"> with AI First PYQS</span>
+            <img :src="sunglassesEmoji" alt="Sunglasses Emoji" class="sunglasses-emoji ml-2" height="100px" width="100px"/>
           </h1>
         </div>
 
@@ -186,45 +176,41 @@ onMounted(() => {
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
 }
 
-/* Rotating text animation */
-.rotating-text-container {
-  position: relative;
-  display: inline-block;
-  min-width: 300px;
-  text-align: left;
-  overflow: hidden;
-  height: 1.2em; /* Set a fixed height to prevent layout shift */
+/* Inline rotating text animation */
+.rotating-text-inline {
+  display: inline;
+  animation: slideUpStickDown 3s ease-in-out;
+  font-size: 0.85em; /* Make the rotating text slightly smaller */
 }
 
-.rotating-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  text-align: left;
-  animation: slideInUp 0.6s ease-out;
-}
-
-@keyframes slideInUp {
+@keyframes slideUpStickDown {
   0% {
-    transform: translateY(100%);
     opacity: 0;
+    transform: translateY(50px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
   }
   100% {
-    transform: translateY(0);
-    opacity: 1;
+    opacity: 0;
+    transform: translateY(-50px);
   }
 }
 
 @media (max-width: 768px) {
-  .rotating-text-container {
-    min-width: 200px;
-    margin-left: 0.5rem; /* Reduce margin on mobile */
+  .rotating-text-inline {
+    font-size: 0.8em;
   }
-  
-  /* Ensure proper text alignment on mobile */
-  .text-5xl.md\\:text-6xl.lg\\:text-7xl {
-    text-align: center;
+}
+
+@media (max-width: 480px) {
+  .rotating-text-inline {
+    font-size: 0.75em;
   }
 }
 
