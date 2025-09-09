@@ -127,12 +127,6 @@ onMounted(() => {
     </div>
     
     
-    <!-- Pulse effect -->
-    <div
-      class="cursor-pulse"
-      :class="cursorClasses"
-      :style="{ transform: `translate(${cursorX}px, ${cursorY}px)` }"
-    ></div>
   </div>
 </template>
 
@@ -151,8 +145,8 @@ onMounted(() => {
 /* Simple circular cursor */
 .cursor-circle {
   position: fixed;
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
@@ -164,29 +158,6 @@ onMounted(() => {
 }
 
 
-/* Pulse effect */
-.cursor-pulse {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  background: rgba(140, 56, 234, 0.2);
-  animation: pulse-fade 1.5s ease-out infinite;
-  will-change: transform, opacity;
-}
-
-@keyframes pulse-fade {
-  0% {
-    opacity: 0.3;
-    transform: translate(-50%, -50%) scale(0.5);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(2);
-  }
-}
 
 /* Visibility and interaction states */
 .cursor-visible {
