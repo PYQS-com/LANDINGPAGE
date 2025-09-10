@@ -16,21 +16,11 @@ import { Mail } from "lucide-vue-next";
         </h3>
       </div>
       
-      <div class="contact-email-container animate-fade-in" style="animation-delay: 200ms;">
-        <div class="flex items-center justify-center gap-4 mb-2">
-          <div class="email-icon-container">
-            <Mail class="email-icon" />
-          </div>
-          <div class="text-left">
-            <div class="font-bold text-lg mb-1 text-foreground">Email us</div>
-            <a 
-              href="mailto:hello@pyqs.com" 
-              class="email-link text-xl font-medium"
-            >
-              hello@pyqs.com
-            </a>
-          </div>
-        </div>
+      <div class="email-container animate-fade-in" style="animation-delay: 200ms;">
+        <Mail class="email-icon" />
+        <a href="mailto:hello@pyqs.in" class="email-link">
+          hello@pyqs.in
+        </a>
       </div>
     </div>
   </section>
@@ -56,82 +46,74 @@ import { Mail } from "lucide-vue-next";
   color: transparent;
 }
 
-.contact-email-container {
-  padding: 2rem;
-  border-radius: 16px;
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-.dark .contact-email-container {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.contact-email-container:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.dark .contact-email-container:hover {
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.05);
-}
-
-.email-icon-container {
-  display: flex;
+.email-container {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-  border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  gap: 12px;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
   transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.dark .email-icon-container {
-  background: linear-gradient(135deg, #ffffff, #f0f0f0);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+.dark .email-container {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+.email-container:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark .email-container:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .email-icon {
-  width: 28px;
-  height: 28px;
-  color: white;
+  width: 20px;
+  height: 20px;
+  color: #666;
+  transition: color 0.3s ease;
 }
 
 .dark .email-icon {
-  color: #1a1a1a;
-}
-
-.email-icon-container:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.dark .email-icon-container:hover {
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+  color: #999;
 }
 
 .email-link {
-  color: #1a1a1a;
+  color: #333;
   text-decoration: none;
-  transition: all 0.3s ease;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
 }
 
 .dark .email-link {
-  color: #ffffff;
+  color: #e5e5e7;
 }
 
-.email-link:hover {
-  color: #2d2d2d;
-  text-decoration: underline;
+.email-container:hover .email-link {
+  color: #007aff;
 }
 
-.dark .email-link:hover {
-  color: #f0f0f0;
+.dark .email-container:hover .email-link {
+  color: #0a84ff;
+}
+
+.email-container:hover .email-icon {
+  color: #007aff;
+}
+
+.dark .email-container:hover .email-icon {
+  color: #0a84ff;
 }
 
 /* Animation keyframes */
@@ -158,18 +140,12 @@ import { Mail } from "lucide-vue-next";
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .contact-email-container {
-    padding: 1.5rem;
+  .email-container {
+    padding: 12px 20px;
   }
   
-  .email-icon-container {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .email-icon {
-    width: 24px;
-    height: 24px;
+  .email-link {
+    font-size: 15px;
   }
   
   .gradient-text {

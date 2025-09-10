@@ -89,12 +89,12 @@ const setActiveTab = (tabId: string) => {
 
 const getActiveTabStyle = (tabId: string) => {
   const styles: Record<string, string> = {
-    gamified: 'bg-gradient-to-r from-[#ff6b6b] to-[#ff8e53] text-white border-transparent shadow-lg shadow-red-200',
-    pyqs: 'bg-gradient-to-r from-[#4ecdc4] to-[#44a08d] text-white border-transparent shadow-lg shadow-teal-200',
-    ai: 'bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white border-transparent shadow-lg shadow-purple-200',
-    analytics: 'bg-gradient-to-r from-[#f093fb] to-[#f5576c] text-white border-transparent shadow-lg shadow-pink-200'
+    gamified: 'bg-gradient-to-r from-[#ff6b6b] via-[#ff7961] to-[#ff8e53] text-white border-transparent shadow-2xl ring-1 ring-red-300/40 glow-red glassmorphism-red',
+    pyqs: 'bg-gradient-to-r from-[#4ecdc4] via-[#4dd0c7] to-[#44a08d] text-white border-transparent shadow-2xl ring-1 ring-teal-300/40 glow-teal glassmorphism-teal',
+    ai: 'bg-gradient-to-r from-[#667eea] via-[#6b73ff] to-[#764ba2] text-white border-transparent shadow-2xl ring-1 ring-purple-300/40 glow-purple glassmorphism-purple',
+    analytics: 'bg-gradient-to-r from-[#f093fb] via-[#f472b6] to-[#f5576c] text-white border-transparent shadow-2xl ring-1 ring-pink-300/40 glow-pink glassmorphism-pink'
   };
-  return styles[tabId] || 'bg-gradient-to-r from-[#8c38ea] to-[#5c50eb] text-white border-transparent shadow-lg';
+  return styles[tabId] || 'bg-gradient-to-r from-[#8c38ea] to-[#5c50eb] text-white border-transparent shadow-2xl glow-default glassmorphism-default';
 };
 
 const getVisualBackground = (tabId: string) => {
@@ -172,15 +172,15 @@ const getDotColor = (tabId: string) => {
           :key="tab.id"
           @click="setActiveTab(tab.id)"
           :class="[
-            'flex items-center rounded-full transition-all duration-300',
-            'border-2 font-medium transform hover:scale-105',
+            'flex items-center rounded-full transition-all duration-500 ease-out',
+            'border font-medium transform hover:scale-105 relative overflow-hidden backdrop-blur-sm',
             // Mobile: circular buttons, expand when active
             'w-12 h-12 p-0 justify-center md:w-auto md:px-6 md:py-3 md:gap-2',
             // Add gap and padding when active on mobile
             activeTab === tab.id ? 'gap-2 px-4 py-3 w-auto' : '',
             activeTab === tab.id
               ? getActiveTabStyle(tab.id)
-              : 'bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-foreground hover:shadow-md'
+              : 'bg-white/10 border-white/20 text-muted-foreground hover:bg-white/20 hover:border-white/30 hover:text-foreground hover:shadow-xl'
           ]"
         >
           <component :is="tab.icon" class="w-5 h-5" />
@@ -227,10 +227,10 @@ const getDotColor = (tabId: string) => {
 
         <!-- Right Visual -->
         <div class="relative">
-          <div :class="getVisualBackground(activeTab)" class="rounded-2xl p-8 border border-border">
+          <div :class="getVisualBackground(activeTab)" class="rounded-2xl p-8">
             <!-- Mock Gamified Interface -->
             <div v-if="activeTab === 'gamified'" class="space-y-4">
-              <div class="bg-background rounded-xl p-6 border shadow-sm">
+              <div class="bg-background rounded-xl p-6 border border-border/10 shadow-sm">
                 <div class="flex items-center justify-between mb-4">
                   <div class="flex items-center gap-3">
                     <div class="w-12 h-12 bg-gradient-to-r from-[#ff6b6b] to-[#ff8e53] rounded-full flex items-center justify-center">
@@ -265,7 +265,7 @@ const getDotColor = (tabId: string) => {
 
             <!-- Mock PYQS Interface -->
             <div v-if="activeTab === 'pyqs'" class="space-y-4">
-              <div class="bg-background rounded-xl p-6 border shadow-sm">
+              <div class="bg-background rounded-xl p-6 border border-border/10 shadow-sm">
                 <div class="flex items-center gap-3 mb-4">
                   <div class="w-10 h-10 bg-gradient-to-r from-[#4ecdc4] to-[#44a08d] rounded-lg flex items-center justify-center">
                     <span class="text-white font-bold text-sm">PYQ</span>
@@ -276,7 +276,7 @@ const getDotColor = (tabId: string) => {
                   </div>
                 </div>
                 <div class="space-y-3">
-                  <div class="p-3 bg-gradient-to-r from-teal-50 to-green-50 rounded-lg border-l-4 border-teal-400">
+                  <div class="p-3 bg-gradient-to-r from-teal-50 to-green-50 rounded-lg border-l-2 border-teal-400">
                     <div class="text-sm font-medium mb-1">Previous Year Trend</div>
                     <div class="text-xs text-muted-foreground">This topic appeared 12 times in last 5 years</div>
                   </div>
@@ -300,7 +300,7 @@ const getDotColor = (tabId: string) => {
 
             <!-- Mock AI Interface -->
             <div v-if="activeTab === 'ai'" class="space-y-4">
-              <div class="bg-background rounded-xl p-6 border shadow-sm">
+              <div class="bg-background rounded-xl p-6 border border-border/10 shadow-sm">
                 <div class="flex items-center gap-3 mb-4">
                   <div class="w-10 h-10 bg-gradient-to-r from-[#667eea] to-[#764ba2] rounded-full flex items-center justify-center">
                     <span class="text-white text-sm font-bold">AI</span>
@@ -332,7 +332,7 @@ const getDotColor = (tabId: string) => {
 
             <!-- Mock Analytics Interface -->
             <div v-if="activeTab === 'analytics'" class="space-y-4">
-              <div class="bg-background rounded-xl p-6 border shadow-sm">
+              <div class="bg-background rounded-xl p-6 border border-border/10 shadow-sm">
                 <div class="flex items-center gap-3 mb-4">
                   <div class="w-10 h-10 bg-gradient-to-r from-[#f093fb] to-[#f5576c] rounded-lg flex items-center justify-center">
                     <BarChart3 class="w-5 h-5 text-white" />
@@ -406,6 +406,87 @@ const getDotColor = (tabId: string) => {
 .animate-slide-up {
   opacity: 0;
   animation: slideUp 0.8s ease-out forwards;
+}
+
+/* Enhanced glow effects for tabs */
+.glow-red {
+  box-shadow: 
+    0 0 30px rgba(255, 107, 107, 0.5),
+    0 0 60px rgba(255, 107, 107, 0.3),
+    0 8px 32px rgba(255, 107, 107, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.glow-teal {
+  box-shadow: 
+    0 0 30px rgba(78, 205, 196, 0.5),
+    0 0 60px rgba(78, 205, 196, 0.3),
+    0 8px 32px rgba(78, 205, 196, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.glow-purple {
+  box-shadow: 
+    0 0 30px rgba(102, 126, 234, 0.5),
+    0 0 60px rgba(102, 126, 234, 0.3),
+    0 8px 32px rgba(102, 126, 234, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.glow-pink {
+  box-shadow: 
+    0 0 30px rgba(240, 147, 251, 0.5),
+    0 0 60px rgba(240, 147, 251, 0.3),
+    0 8px 32px rgba(240, 147, 251, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.glow-default {
+  box-shadow: 
+    0 0 30px rgba(140, 56, 234, 0.5),
+    0 0 60px rgba(140, 56, 234, 0.3),
+    0 8px 32px rgba(140, 56, 234, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Glassmorphism effects */
+.glassmorphism-red {
+  backdrop-filter: blur(16px);
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.9), rgba(255, 142, 83, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glassmorphism-teal {
+  backdrop-filter: blur(16px);
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.9), rgba(68, 160, 141, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glassmorphism-purple {
+  backdrop-filter: blur(16px);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glassmorphism-pink {
+  backdrop-filter: blur(16px);
+  background: linear-gradient(135deg, rgba(240, 147, 251, 0.9), rgba(245, 87, 108, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glassmorphism-default {
+  backdrop-filter: blur(16px);
+  background: linear-gradient(135deg, rgba(140, 56, 234, 0.9), rgba(92, 80, 235, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced hover effects */
+button:hover.glow-red,
+button:hover.glow-teal,
+button:hover.glow-purple,
+button:hover.glow-pink,
+button:hover.glow-default {
+  transform: scale(1.05) translateY(-2px);
 }
 
 /* Responsive adjustments */
