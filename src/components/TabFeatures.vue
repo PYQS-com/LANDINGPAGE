@@ -225,144 +225,136 @@ const getDotColor = (tabId: string) => {
           </div>
         </div>
 
-        <!-- Right Visual -->
+        <!-- Clean Dashboard Design -->
         <div class="relative">
-          <div :class="getVisualBackground(activeTab)" class="rounded-2xl p-8">
-            <!-- Mock Gamified Interface -->
-            <div v-if="activeTab === 'gamified'" class="space-y-4">
-              <div class="bg-background rounded-xl p-6 border border-border/10 shadow-sm">
-                <div class="flex items-center justify-between mb-4">
-                  <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-gradient-to-r from-[#ff6b6b] to-[#ff8e53] rounded-full flex items-center justify-center">
-                      <Zap class="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div class="font-bold text-lg">Level 15</div>
-                      <div class="text-sm text-muted-foreground">Cardiology Master</div>
-                    </div>
-                  </div>
-                  <div class="text-right">
-                    <div class="text-2xl font-bold text-[#ff6b6b]">2,450</div>
-                    <div class="text-xs text-muted-foreground">XP Points</div>
+          <div class="bg-white dark:bg-gray-900 rounded-2xl md:rounded-3xl p-4 md:p-8 shadow-lg">
+            
+            <!-- Header -->
+            <div class="flex items-center gap-3 mb-6 md:mb-8">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center" :class="getCurrentTab().id === 'gamified' ? 'bg-red-100 dark:bg-red-900/30' : getCurrentTab().id === 'pyqs' ? 'bg-teal-100 dark:bg-teal-900/30' : getCurrentTab().id === 'ai' ? 'bg-purple-100 dark:bg-purple-900/30' : 'bg-pink-100 dark:bg-pink-900/30'">
+                <component :is="getCurrentTab().icon" class="w-4 h-4" :class="getCurrentTab().id === 'gamified' ? 'text-red-600 dark:text-red-400' : getCurrentTab().id === 'pyqs' ? 'text-teal-600 dark:text-teal-400' : getCurrentTab().id === 'ai' ? 'text-purple-600 dark:text-purple-400' : 'text-pink-600 dark:text-pink-400'" />
+              </div>
+              <h3 class="font-semibold text-gray-900 dark:text-white">{{ getCurrentTab().title }}</h3>
+            </div>
+
+            <!-- Content -->
+            <div class="space-y-6">
+              
+              <!-- Gamified Content -->
+              <div v-if="activeTab === 'gamified'" key="gamified" class="animate-fade-in space-y-6">
+                <div class="text-center">
+                  <div class="text-4xl font-bold text-red-600 dark:text-red-400 mb-2">2,450</div>
+                  <div class="text-sm text-gray-600 dark:text-gray-400 mb-4">XP Points Earned</div>
+                  <div class="inline-flex items-center gap-2 px-4 py-2 bg-red-50 dark:bg-red-900/20 rounded-full">
+                    <div class="text-lg font-bold text-red-700 dark:text-red-300">Level 15</div>
+                    <div class="text-sm text-red-600 dark:text-red-400">Cardiology Master</div>
                   </div>
                 </div>
-                <div class="space-y-3">
-                  <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-lg flex items-center justify-center">
-                      <Trophy class="w-4 h-4 text-white" />
-                    </div>
-                    <span class="text-sm font-medium">7-day study streak!</span>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-xl md:rounded-2xl p-3 md:p-4 text-center">
+                    <Trophy class="w-6 h-6 md:w-8 md:h-8 text-yellow-600 dark:text-yellow-400 mx-auto mb-2" />
+                    <div class="font-semibold text-sm text-gray-900 dark:text-white">7 Day Streak</div>
+                    <div class="text-xs text-gray-600 dark:text-gray-400">Keep going!</div>
                   </div>
-                  <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 bg-gradient-to-r from-green-400 to-blue-400 rounded-lg flex items-center justify-center">
-                      <Target class="w-4 h-4 text-white" />
-                    </div>
-                    <span class="text-sm font-medium">Achievement unlocked: Anatomy Expert</span>
+                  <div class="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-xl md:rounded-2xl p-3 md:p-4 text-center">
+                    <Target class="w-6 h-6 md:w-8 md:h-8 text-green-600 dark:text-green-400 mx-auto mb-2" />
+                    <div class="font-semibold text-sm text-gray-900 dark:text-white">Expert Badge</div>
+                    <div class="text-xs text-gray-600 dark:text-gray-400">Anatomy</div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Mock PYQS Interface -->
-            <div v-if="activeTab === 'pyqs'" class="space-y-4">
-              <div class="bg-background rounded-xl p-6 border border-border/10 shadow-sm">
-                <div class="flex items-center gap-3 mb-4">
-                  <div class="w-10 h-10 bg-gradient-to-r from-[#4ecdc4] to-[#44a08d] rounded-lg flex items-center justify-center">
-                    <span class="text-white font-bold text-sm">PYQ</span>
-                  </div>
-                  <div>
-                    <div class="font-bold">NEET PG 2023</div>
-                    <div class="text-sm text-muted-foreground">Cardiology • Question 45/180</div>
+              <!-- PYQS Content -->
+              <div v-if="activeTab === 'pyqs'" key="pyqs" class="animate-fade-in space-y-6">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-gray-900 dark:text-white mb-1">NEET PG 2023</div>
+                  <div class="text-sm text-gray-600 dark:text-gray-400">Question 45 of 180 • Cardiology</div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-teal-50 to-green-50 dark:from-teal-900/20 dark:to-green-900/20 rounded-xl md:rounded-2xl p-4 md:p-6">
+                  <div class="text-center mb-4">
+                    <div class="text-base md:text-lg font-bold text-teal-700 dark:text-teal-300">Previous Year Trend</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">This topic appeared 12 times in last 5 years</div>
                   </div>
                 </div>
-                <div class="space-y-3">
-                  <div class="p-3 bg-gradient-to-r from-teal-50 to-green-50 rounded-lg border-l-2 border-teal-400">
-                    <div class="text-sm font-medium mb-1">Previous Year Trend</div>
-                    <div class="text-xs text-muted-foreground">This topic appeared 12 times in last 5 years</div>
+
+                <div class="grid grid-cols-3 gap-2 md:gap-3">
+                  <div class="text-center p-3 md:p-4 bg-gray-50 dark:bg-gray-800 rounded-lg md:rounded-xl">
+                    <div class="text-lg md:text-2xl font-bold text-teal-600 dark:text-teal-400">85%</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">Accuracy</div>
                   </div>
-                  <div class="grid grid-cols-3 gap-2 text-center">
-                    <div class="p-2 bg-teal-100 rounded text-xs">
-                      <div class="font-bold text-teal-700">85%</div>
-                      <div class="text-teal-600">Accuracy</div>
+                  <div class="text-center p-3 md:p-4 bg-gray-50 dark:bg-gray-800 rounded-lg md:rounded-xl">
+                    <div class="text-lg md:text-2xl font-bold text-blue-600 dark:text-blue-400">2.5m</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">Avg Time</div>
+                  </div>
+                  <div class="text-center p-3 md:p-4 bg-gray-50 dark:bg-gray-800 rounded-lg md:rounded-xl">
+                    <div class="text-lg md:text-2xl font-bold text-green-600 dark:text-green-400">High</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">Priority</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- AI Content -->
+              <div v-if="activeTab === 'ai'" key="ai" class="animate-fade-in space-y-6">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+                  <div class="text-lg md:text-xl font-bold text-gray-900 dark:text-white">PYQS Assistant</div>
+                  <div class="flex items-center gap-1">
+                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span class="text-sm text-green-600 dark:text-green-400 font-medium">Online</span>
+                  </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-xl md:rounded-2xl p-4 md:p-6">
+                  <div class="flex flex-col sm:flex-row items-start gap-3">
+                    <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <Zap class="w-4 h-4 text-white" />
                     </div>
-                    <div class="p-2 bg-blue-100 rounded text-xs">
-                      <div class="font-bold text-blue-700">2.5min</div>
-                      <div class="text-blue-600">Avg Time</div>
-                    </div>
-                    <div class="p-2 bg-green-100 rounded text-xs">
-                      <div class="font-bold text-green-700">High</div>
-                      <div class="text-green-600">Priority</div>
+                    <div class="flex-1">
+                      <div class="font-semibold text-purple-700 dark:text-purple-300 mb-2">AI Recommendation</div>
+                      <div class="text-sm text-gray-600 dark:text-gray-400 mb-4">Based on your performance, focus more on Pharmacology this week.</div>
+                      <div class="flex gap-2 flex-wrap">
+                        <span class="px-3 py-1 bg-white dark:bg-gray-700 text-purple-700 dark:text-purple-300 rounded-full text-xs font-medium">Quick Quiz</span>
+                        <span class="px-3 py-1 bg-white dark:bg-gray-700 text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium">Explain</span>
+                        <span class="px-3 py-1 bg-white dark:bg-gray-700 text-indigo-700 dark:text-indigo-300 rounded-full text-xs font-medium">Study Plan</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Mock AI Interface -->
-            <div v-if="activeTab === 'ai'" class="space-y-4">
-              <div class="bg-background rounded-xl p-6 border border-border/10 shadow-sm">
-                <div class="flex items-center gap-3 mb-4">
-                  <div class="w-10 h-10 bg-gradient-to-r from-[#667eea] to-[#764ba2] rounded-full flex items-center justify-center">
-                    <span class="text-white text-sm font-bold">AI</span>
+              <!-- Analytics Content -->
+              <div v-if="activeTab === 'analytics'" key="analytics" class="animate-fade-in space-y-6">
+                <div class="text-center mb-6">
+                  <div class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-1">Weekly Performance</div>
+                  <div class="text-sm text-gray-600 dark:text-gray-400">Your study analytics overview</div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                  <div class="text-center p-4 md:p-6 bg-gradient-to-r from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20 rounded-xl md:rounded-2xl">
+                    <div class="text-2xl md:text-3xl font-bold text-pink-600 dark:text-pink-400 mb-1">78%</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">Overall Accuracy</div>
                   </div>
-                  <div>
-                    <div class="font-bold">PYQS Assistant</div>
-                    <div class="text-sm text-green-500 flex items-center gap-1">
-                      <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      Online
-                    </div>
+                  <div class="text-center p-4 md:p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl md:rounded-2xl">
+                    <div class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">156</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">Questions Solved</div>
                   </div>
                 </div>
-                <div class="space-y-3">
-                  <div class="p-3 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg">
-                    <div class="text-sm font-medium mb-2 flex items-center gap-2">
-                      <Zap class="w-4 h-4 text-purple-600" />
-                      AI Suggestion
-                    </div>
-                    <div class="text-xs text-muted-foreground">Based on your performance, focus more on Pharmacology this week.</div>
-                  </div>
-                  <div class="flex gap-2 flex-wrap">
-                    <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">Quick Quiz</span>
-                    <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs">Explain Concept</span>
-                    <span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs">Study Plan</span>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <!-- Mock Analytics Interface -->
-            <div v-if="activeTab === 'analytics'" class="space-y-4">
-              <div class="bg-background rounded-xl p-6 border border-border/10 shadow-sm">
-                <div class="flex items-center gap-3 mb-4">
-                  <div class="w-10 h-10 bg-gradient-to-r from-[#f093fb] to-[#f5576c] rounded-lg flex items-center justify-center">
-                    <BarChart3 class="w-5 h-5 text-white" />
+                <div class="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-xl md:rounded-2xl p-4 md:p-6">
+                  <div class="flex items-center gap-2 mb-4">
+                    <Target class="w-4 h-4 md:w-5 md:h-5 text-orange-600 dark:text-orange-400" />
+                    <span class="font-semibold text-sm md:text-base text-orange-700 dark:text-orange-300">Focus Areas Progress</span>
                   </div>
-                  <div>
-                    <div class="font-bold">Weekly Analytics</div>
-                    <div class="text-sm text-muted-foreground">Performance Overview</div>
+                  <div class="flex h-2 md:h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                    <div class="bg-red-400 flex-1"></div>
+                    <div class="bg-yellow-400 flex-1"></div>
+                    <div class="bg-green-400 flex-2"></div>
                   </div>
-                </div>
-                <div class="space-y-3">
-                  <div class="grid grid-cols-2 gap-3">
-                    <div class="p-3 bg-gradient-to-r from-pink-50 to-rose-50 rounded-lg">
-                      <div class="text-2xl font-bold text-pink-600 mb-1">78%</div>
-                      <div class="text-xs text-muted-foreground">Overall Accuracy</div>
-                    </div>
-                    <div class="p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg">
-                      <div class="text-2xl font-bold text-blue-600 mb-1">156</div>
-                      <div class="text-xs text-muted-foreground">Questions Solved</div>
-                    </div>
-                  </div>
-                  <div class="p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg">
-                    <div class="text-sm font-medium mb-2 flex items-center gap-2">
-                      <Target class="w-4 h-4 text-orange-600" />
-                      Focus Areas
-                    </div>
-                    <div class="flex gap-1">
-                      <div class="h-2 bg-red-400 rounded flex-1"></div>
-                      <div class="h-2 bg-yellow-400 rounded flex-1"></div>
-                      <div class="h-2 bg-green-400 rounded flex-2"></div>
-                    </div>
+                  <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-2">
+                    <span>Weak</span>
+                    <span>Average</span>
+                    <span>Strong</span>
                   </div>
                 </div>
               </div>
