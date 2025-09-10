@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { MessageSquare, Search, Zap, BookOpen, Trophy, Target, BarChart3 } from 'lucide-vue-next';
+import { MessageSquare, Search, Zap, BookOpen, Trophy, Target } from 'lucide-vue-next';
 
 interface TabFeature {
   id: string;
@@ -97,15 +97,6 @@ const getActiveTabStyle = (tabId: string) => {
   return styles[tabId] || 'bg-gradient-to-r from-[#8c38ea] to-[#5c50eb] text-white border-transparent shadow-2xl glow-default glassmorphism-default';
 };
 
-const getVisualBackground = (tabId: string) => {
-  const backgrounds: Record<string, string> = {
-    gamified: 'bg-gradient-to-br from-red-50/80 to-orange-50/80',
-    pyqs: 'bg-gradient-to-br from-teal-50/80 to-green-50/80',
-    ai: 'bg-gradient-to-br from-purple-50/80 to-blue-50/80',
-    analytics: 'bg-gradient-to-br from-pink-50/80 to-rose-50/80'
-  };
-  return backgrounds[tabId] || 'bg-gradient-to-br from-[#8c38ea]/5 to-[#5c50eb]/5';
-};
 
 const getButtonStyle = (tabId: string) => {
   const styles: Record<string, string> = {
