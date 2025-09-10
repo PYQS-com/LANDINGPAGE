@@ -17,7 +17,7 @@ const firstRowReviews = ref<Review[]>([
     name: "Dr. Ananya Sharma",
     college: "AIIMS Delhi",
     rating: 5,
-    image: "/reviews/student1.jpg",
+    image: "https://images.pexels.com/photos/5327584/pexels-photo-5327584.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
     review: "PYQS.com has transformed my NEET PG preparation. The well-organized question bank helped me improve my weak subjects significantly."
   },
   {
@@ -25,7 +25,7 @@ const firstRowReviews = ref<Review[]>([
     name: "Dr. Rajesh Kumar",
     college: "King George's Medical University",
     rating: 5,
-    image: "/reviews/student2.jpg",
+    image: "https://images.pexels.com/photos/6129105/pexels-photo-6129105.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
     review: "The AI-powered analytics helped me focus on high-yield topics. I've seen a 30% improvement in my mock test scores in just 2 months!"
   },
   {
@@ -33,7 +33,7 @@ const firstRowReviews = ref<Review[]>([
     name: "Dr. Priya Patel",
     college: "Grant Medical College, Mumbai",
     rating: 4,
-    image: "/reviews/student3.jpg",
+    image: "https://images.pexels.com/photos/6129193/pexels-photo-6129193.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
     review: "The subject-wise categorization of previous questions made my revision strategy much more effective. Highly recommended!"
   },
   {
@@ -41,7 +41,7 @@ const firstRowReviews = ref<Review[]>([
     name: "Dr. Arjun Singh",
     college: "Maulana Azad Medical College",
     rating: 5,
-    image: "/reviews/student4.jpg",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVUf2cC1UmNlJXzeXac3vbAcp27BpuXJmIfA&s",
     review: "PYQS.com's adaptive learning system helped identify my knowledge gaps. The personalized study plan was exactly what I needed."
   },
   {
@@ -49,7 +49,7 @@ const firstRowReviews = ref<Review[]>([
     name: "Dr. Nisha Verma",
     college: "Seth G.S. Medical College",
     rating: 4,
-    image: "/reviews/student5.jpg",
+    image: "https://images.pexels.com/photos/6129041/pexels-photo-6129041.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
     review: "The detailed explanations for each question helped me understand concepts better. Now I approach MCQs with much more confidence."
   },
 ]);
@@ -61,7 +61,7 @@ const secondRowReviews = ref<Review[]>([
     name: "Dr. Vikram Choudhary",
     college: "Christian Medical College, Vellore",
     rating: 5,
-    image: "/reviews/student6.jpg",
+    image: "https://images.pexels.com/photos/6129508/pexels-photo-6129508.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
     review: "The timed mock tests accurately simulate NEET PG exam conditions. My test-taking speed and accuracy have both improved dramatically."
   },
   {
@@ -69,7 +69,7 @@ const secondRowReviews = ref<Review[]>([
     name: "Dr. Meera Reddy",
     college: "Madras Medical College",
     rating: 4,
-    image: "/reviews/student7.jpg",
+    image: "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
     review: "PYQS.com's image-based questions are incredibly helpful for practicing visual diagnosis - a crucial skill for NEET PG."
   },
   {
@@ -77,7 +77,7 @@ const secondRowReviews = ref<Review[]>([
     name: "Dr. Karthik Nair",
     college: "Jawaharlal Institute of Postgraduate Medical Education & Research",
     rating: 5,
-    image: "/reviews/student8.jpg",
+    image: "https://images.pexels.com/photos/5327656/pexels-photo-5327656.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
     review: "The detailed performance analytics helped me understand my progress over time and adjust my preparation accordingly."
   },
   {
@@ -85,7 +85,7 @@ const secondRowReviews = ref<Review[]>([
     name: "Dr. Shreya Gupta",
     college: "Government Medical College, Chandigarh",
     rating: 5,
-    image: "/reviews/student9.jpg",
+    image: "https://images.pexels.com/photos/6129094/pexels-photo-6129094.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
     review: "The mobile app is perfect for on-the-go revision during hospital rotations. It's been my constant companion during internship."
   },
   {
@@ -93,7 +93,7 @@ const secondRowReviews = ref<Review[]>([
     name: "Dr. Aditya Malhotra",
     college: "R.G. Kar Medical College",
     rating: 4,
-    image: "/reviews/student10.jpg",
+    image: "https://images.pexels.com/photos/5327589/pexels-photo-5327589.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
     review: "The regular updates with new questions and explanations keep the content fresh and relevant to the changing exam pattern."
   },
 ]);
@@ -105,7 +105,7 @@ const thirdRowReviews = ref<Review[]>([
     name: "Dr. Kavita Menon",
     college: "Stanley Medical College",
     rating: 5,
-    image: "/reviews/student11.jpg",
+    image: "https://images.pexels.com/photos/6129510/pexels-photo-6129510.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
     review: "The subject experts who create content for PYQS.com really understand what's important for NEET PG. Every minute spent on the platform is valuable."
   },
   {
@@ -113,7 +113,7 @@ const thirdRowReviews = ref<Review[]>([
     name: "Dr. Rohit Desai",
     college: "B.J. Medical College, Ahmedabad",
     rating: 4,
-    image: "/reviews/student12.jpg",
+    image: "https://images.pexels.com/photos/6129074/pexels-photo-6129074.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
     review: "The discussion forum for each question helped me understand different perspectives and approaches to complex topics."
   },
   {
@@ -121,7 +121,7 @@ const thirdRowReviews = ref<Review[]>([
     name: "Dr. Sanya Joshi",
     college: "Kasturba Medical College, Manipal",
     rating: 5,
-    image: "/reviews/student13.jpg",
+    image: "https://images.pexels.com/photos/6129042/pexels-photo-6129042.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
     review: "I appreciate the error reporting feature. The team quickly corrects any inaccuracies, ensuring we learn from correct information."
   },
   {
@@ -129,7 +129,7 @@ const thirdRowReviews = ref<Review[]>([
     name: "Dr. Vivek Raghavan",
     college: "Government Medical College, Kozhikode",
     rating: 5,
-    image: "/reviews/student14.jpg",
+    image: "https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
     review: "The difficulty-based filtering helped me gradually increase the challenge as my preparation improved. Perfect for progressive learning."
   },
   {
@@ -137,7 +137,7 @@ const thirdRowReviews = ref<Review[]>([
     name: "Dr. Tanvi Deshmukh",
     college: "Armed Forces Medical College, Pune",
     rating: 4,
-    image: "/reviews/student15.jpg",
+    image: "https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
     review: "The year-wise sorting of PYQs gave me insight into how exam patterns have evolved, helping me focus on what's most relevant now."
   },
 ]);
@@ -424,15 +424,44 @@ onMounted(() => {
   background: linear-gradient(45deg, #ff9800, #ffb300);
 }
 
-/* Updated avatar style */
+/* Updated avatar style - more realistic */
 .avatar {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   background-size: cover;
   background-position: center;
-  border: 2px solid white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 3px solid white;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Add a subtle overlay for better image quality appearance */
+.avatar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+.review-card:hover .avatar {
+  transform: scale(1.05);
+  box-shadow: 
+    0 6px 16px rgba(0, 0, 0, 0.2),
+    0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 .review-header {
@@ -456,7 +485,9 @@ onMounted(() => {
   font-weight: 600;
   font-size: 0.9rem;
   color: hsl(var(--foreground));
+  position: relative;
 }
+
 
 .college {
   font-size: 0.75rem;
@@ -466,7 +497,10 @@ onMounted(() => {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 500;
 }
+
+
 
 .rating {
   display: flex;
@@ -482,11 +516,39 @@ onMounted(() => {
   color: #F9A825;
 }
 
+
 .review-content {
   font-size: 0.875rem;
   line-height: 1.5;
   color: hsl(var(--muted-foreground));
   font-style: italic;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+/* Add subtle quotation styling */
+.review-content::before {
+  content: '"';
+  font-size: 2.5rem;
+  color: rgba(140, 56, 234, 0.15);
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.review-content::after {
+  content: '"';
+  font-size: 2.5rem;
+  color: rgba(140, 56, 234, 0.15);
+  position: absolute;
+  bottom: -1rem;
+  right: -0.5rem;
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
 }
 
 /* Animation keyframes */
