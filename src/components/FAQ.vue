@@ -39,8 +39,8 @@ const FAQList: FAQProps[] = [
     value: "item-5",
   },
   {
-    question: "Is PYQS available 24/7?",
-    answer: "Absolutely! PYQS is available round the clock, so you can study anytime, anywhere. Our AI Assistant and all features work 24/7 to support your medical exam preparation.",
+    question: "What other tools are available on this platform?",
+    answer: "PYQS offers powerful study tools including the ability to save important questions for later review, bookmark difficult topics, and ask our AI assistant for doubt clarifications and detailed explanations on any medical concept.",
     value: "item-6",
   },
 ];
