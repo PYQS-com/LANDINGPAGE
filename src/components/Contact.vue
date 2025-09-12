@@ -5,7 +5,7 @@ import { Mail } from "lucide-vue-next";
 <template>
   <section
     id="contact"
-    class="container py-24 sm:py-32"
+    class="container py-16 sm:py-20"
   >
     <div class="text-center max-w-2xl mx-auto">
       <div class="mb-8">

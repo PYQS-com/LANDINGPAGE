@@ -5,9 +5,10 @@ const mode = useColorMode();
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-vue-next";
+import { ArrowRight, UserPlus } from "lucide-vue-next";
 import sunglassesEmoji from "@/assets/GIFS/SUNGLASS.png"
 import desktopScreenshot from "@/assets/DESKTOPSS.png"
+import desktopDarkScreenshot from "@/assets/DESKTOPDARK.png"
 
 const platformFeatures = ref([
   { text: "Mock Tests", color: "purple-gradient" },
@@ -74,9 +75,10 @@ onMounted(() => {
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
           <Button as-child class="w-full sm:w-auto px-8 py-3 font-bold group/arrow gradient-button">
-            <a href="https://tally.so/r/wM0azk" target="_blank" rel="noopener noreferrer">
-              Start Learning
-              <ArrowRight class="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
+            <a href="https://tally.so/r/wM0azk" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2">
+              <UserPlus class="size-5" />
+              <span>Join Waitlist</span>
+              <ArrowRight class="size-5 group-hover/arrow:translate-x-1 transition-transform" />
             </a>
           </Button>
           <Button as-child variant="secondary" class="w-full sm:w-auto px-8 py-3 font-bold bg-white border-black dark:bg-grey dark:border-white dark:text-black">
@@ -120,7 +122,7 @@ onMounted(() => {
         <div class="screenshot-frame">
           <img
             class="w-full h-auto"
-            :src="desktopScreenshot"
+            :src="mode === 'dark' ? desktopDarkScreenshot : desktopScreenshot"
             alt="PYQS Dashboard"
           />
           

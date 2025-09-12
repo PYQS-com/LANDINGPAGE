@@ -20,40 +20,22 @@ interface FeaturesProps {
 
 const featureList: FeaturesProps[] = [
   {
-    icon: "tabletSmartphone",
-    title: "Quick Access to Notes",
+    icon: "messageCircle",
+    title: "PYQS AI Assistant",
     description:
-      "Get instant access to MBBS class notes and study materials, organized for your convenience.",
-  },
-  {
-    icon: "badgeCheck",
-    title: "Verified Content",
-    description:
-      "All materials are curated and verified to ensure accuracy and reliability for students.",
+      "Get personalized study guidance and instant answers to your questions with our intelligent AI assistant.",
   },
   {
     icon: "goal",
-    title: "Diverse Subjects",
+    title: "Gamification",
     description:
-      "Access notes and resources across various MBBS subjects, tailored for comprehensive learning.",
+      "Earn points, unlock achievements, and compete with peers to make learning more engaging and fun.",
   },
   {
-    icon: "pictureInPicture",
-    title: "User-Friendly Interface",
+    icon: "tabletSmartphone",
+    title: "AI Analytics",
     description:
-      "Navigate through the platform effortlessly with an intuitive and simple design.",
-  },
-  {
-    icon: "mousePointerClick",
-    title: "Interactive Features",
-    description:
-      "Engage with interactive tools that enhance understanding and retention of complex topics.",
-  },
-  {
-    icon: "newspaper",
-    title: "Regular Updates",
-    description:
-      "Stay updated with the latest additions and improvements to the resources available on the platform.",
+      "Track your learning progress with smart analytics that provide insights into your study patterns and performance.",
   },
 ];
 
