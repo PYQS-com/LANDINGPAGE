@@ -163,7 +163,7 @@ const getDotColor = (tabId: string) => {
           :key="tab.id"
           @click="setActiveTab(tab.id)"
           :class="[
-            'flex items-center rounded-full transition-all duration-500 ease-out',
+            'flex items-center rounded-full transition-[transform,background-color,border-color,box-shadow] duration-150 ease-out',
             'border font-medium transform hover:scale-105 relative overflow-hidden backdrop-blur-sm',
             // Mobile: circular buttons, expand when active
             'w-12 h-12 p-0 justify-center md:w-auto md:px-6 md:py-3 md:gap-2',
@@ -210,7 +210,7 @@ const getDotColor = (tabId: string) => {
               </li>
             </ul>
 
-            <button :class="getButtonStyle(activeTab)" class="inline-flex items-center px-6 py-3 text-white rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+            <button :class="getButtonStyle(activeTab)" class="inline-flex items-center px-6 py-3 text-white rounded-lg font-medium hover:shadow-lg transition-[transform,box-shadow] duration-150 transform hover:-translate-y-1">
               Try {{ getCurrentTab().title }} for Free
             </button>
           </div>

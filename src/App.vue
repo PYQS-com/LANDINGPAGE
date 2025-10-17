@@ -23,7 +23,7 @@ import SmoothCursor from "./components/magicui/SmoothCursor.vue";
       <Features /> -->
       <!-- <Services /> -->
       <TabFeatures />
-      <ReviewsMarquee />
+      <!-- <ReviewsMarquee /> -->
       <!-- <Pricing /> -->
       <!-- <Testimonials /> -->
       <!-- <Team /> -->
